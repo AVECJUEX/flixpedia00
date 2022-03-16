@@ -43,6 +43,7 @@
 <!-- **************************************************영화 카졸********************************************************** -->
 <form id="movieForm" name="movieForm" >
 	<input type="hidden" name="board_seq" value=""/>
+	<input type="hidden" name="category_code"  id="category_code" value=""/>
 	<section class="movie" style="margin-top:0px; padding-top: 50px;">
 		<!-- 카졸 백그라운드 이미지 movie bg -->
 		<div class="owl-carousel movie__bg">
@@ -75,14 +76,14 @@
 						<div class="item" style="width: 255px; margin-right: 80px;">
 							<!-- card -->
 							<div class="card card--big">
-								<div class="card__cover" onclick="goView('<%=tempDto.getBoard_seq()%>')">
+								<div class="card__cover" onclick="goMovieView('<%=tempDto.getBoard_seq()%>')">
 									<img src="<%=request.getContextPath()%>/resources/movie_img/<%=tempDto.getMovie_images()%>" alt="" style="height: 320px;object-fit: cover;">
 									<a href="#" class="card__play">
 										<i class="icon ion-ios-play"></i>
 									</a>
 								</div>
 								<div class="card__content">
-									<h3 class="card__title" onclick="goView('<%=tempDto.getBoard_seq()%>')"><a href="#"><%=tempDto.getMovie_title()%></a></h3>
+									<h3 class="card__title" onclick="goMovieView('<%=tempDto.getBoard_seq()%>')"><a href="#"><%=tempDto.getMovie_title()%></a></h3>
 									<span class="card__category">
 										<%
 								if(tempDto.getGenre_code().equals("00")){ %>
@@ -108,7 +109,7 @@
 									<%}%>
 										
 									</span>
-									<span class="card__rate"><i class="icon ion-ios-star"></i><%=tempDto.getMovie_hit()%></span>
+									<span class="card__rate"><i class="icon ion-ios-star"></i><%=tempDto.getStar_avg()%></span>
 								</div>
 							</div>
 						</div>
@@ -129,6 +130,7 @@
 <!-- *************************************************드라마 카졸 시작********************************************************** -->
 	<form id="dramaForm" name="dramaForm" >
 	<input type="hidden" name="board_seq" value=""/>
+	<input type="hidden" name="category_code"  id="category_code" value=""/>
 	<section class="drama" style="margin-top:0px; padding-top: 50px;">
 		<!-- 카졸 백그라운드 이미지 drama bg -->
 		<div class="owl-carousel drama__bg">
@@ -162,14 +164,14 @@
 						<div class="item" style="width: 255px; margin-right: 80px;">
 							<!-- card -->
 							<div class="card card--big">
-								<div class="card__cover" onclick="goView1('<%=tempDto.getBoard_seq()%>')">
+								<div class="card__cover" onclick="goDramaView('<%=tempDto.getBoard_seq()%>')">
 									<img src="<%=request.getContextPath()%>/resources/drama_img/<%=tempDto.getDrama_images()%>" alt="" style="height: 320px;object-fit: cover;">
 									<a href="#" class="card__play">
 										<i class="icon ion-ios-play"></i>
 									</a>
 								</div>
 								<div class="card__content">
-									<h3 class="card__title" onclick="goView1('<%=tempDto.getBoard_seq()%>')"><a href="#"><%=tempDto.getDrama_title()%></a></h3>
+									<h3 class="card__title" onclick="goDramaView('<%=tempDto.getBoard_seq()%>')"><a href="#"><%=tempDto.getDrama_title()%></a></h3>
 									<span class="card__category">
 										<%
 								if(tempDto.getGenre_code().equals("00")){ %>
@@ -217,6 +219,7 @@
 <!-- ************************************************enter 카졸************************************************************ -->
 	<form id="enterForm" name="enterForm" >
 	<input type="hidden" name="board_seq" value=""/>
+	<input type="hidden" name="category_code"  id="category_code" value=""/>
 	<section class="enter" style="margin-top:0px; padding-top: 50px;">
 		<!-- 카졸 백그라운드 이미지 enter bg -->
 		<div class="owl-carousel enter__bg">
@@ -251,14 +254,14 @@
 						<div class="item" style="width: 255px; margin-right: 80px;">
 							<!-- card -->
 							<div class="card card--big">
-								<div class="card__cover" onclick="goView2('<%=tempDto.getBoard_seq()%>')">
+								<div class="card__cover" onclick="goEnterView('<%=tempDto.getBoard_seq()%>')">
 									<img src="<%=request.getContextPath()%>/resources/enter_img/<%=tempDto.getEnter_images()%>" alt="" style="height: 320px;object-fit: cover;">
 									<a href="#" class="card__play">
 										<i class="icon ion-ios-play"></i>
 									</a>
 								</div>
 								<div class="card__content">
-									<h3 class="card__title" onclick="goView2('<%=tempDto.getBoard_seq()%>')"><a href="#"><%=tempDto.getEnter_title()%></a></h3>
+									<h3 class="card__title" onclick="goEnterView('<%=tempDto.getBoard_seq()%>')"><a href="#"><%=tempDto.getEnter_title()%></a></h3>
 									<span class="card__category">
 										<%
 								if(tempDto.getGenre_code().equals("00")){ %>
@@ -284,7 +287,7 @@
 									<%}%>
 										
 									</span>
-									<span class="card__rate"><i class="icon ion-ios-star"></i><%=tempDto.getEnter_hit()%></span>
+									<span class="card__rate"><i class="icon ion-ios-star"></i><%=tempDto.getStar_avg()%></span>
 								</div>
 							</div>
 						</div>
@@ -305,6 +308,7 @@
 <!-- ************************************************ 애니 카졸 시작 ************************************************************ -->
 	<form id="aniForm" name="aniForm" >
 	<input type="hidden" name="board_seq" value=""/>
+	<input type="hidden" name="category_code"  id="category_code" value=""/>
 	<section class="ani" style="margin-top:0px; padding-top: 50px;">
 		<!-- 카졸 백그라운드 이미지 ani bg -->
 		<div class="owl-carousel ani__bg">
@@ -338,14 +342,14 @@
 						<div class="item" style="width: 255px; margin-right: 80px;">
 							<!-- card -->
 							<div class="card card--big">
-								<div class="card__cover" onclick="goView3('<%=tempDto.getBoard_seq()%>')">
+								<div class="card__cover" onclick="goAniView('<%=tempDto.getBoard_seq()%>')">
 									<img src="<%=request.getContextPath() %>/resources/animation_img/<%=tempDto.getAni_images()%>" alt="" style="height: 320px;object-fit: cover;">
 									<a href="#" class="card__play">
 										<i class="icon ion-ios-play"></i>
 									</a>
 								</div>
 								<div class="card__content">
-									<h3 class="card__title" onclick="goView3('<%=tempDto.getBoard_seq()%>')"><a href="#"><%=tempDto.getAni_title() %></a></h3>
+									<h3 class="card__title" onclick="goAniView('<%=tempDto.getBoard_seq()%>')"><a href="#"><%=tempDto.getAni_title() %></a></h3>
 									<span class="card__category">
 										<%
 								if(tempDto.getGenre_code().equals("00")){ %>
@@ -371,7 +375,7 @@
 									<%}%>
 										
 									</span>
-									<span class="card__rate"><i class="icon ion-ios-star"></i><%=tempDto.getAni_hit() %></span>
+									<span class="card__rate"><i class="icon ion-ios-star"></i><%=tempDto.getStar_avg() %></span>
 								</div>
 							</div>
 						</div>
@@ -391,6 +395,7 @@
 	<!-- ************************************************ 웹툰 카졸 ************************************************************ -->
 	<form id="webtoonForm" name="webtoonForm" >
 	<input type="hidden" name="board_seq" value=""/>
+	<input type="hidden" name="category_code"  id="category_code" value=""/>
 	<section class="webtoon" style="margin-top:0px; padding-top: 50px;">
 		<!-- 카졸 백그라운드 이미지 webtoon bg -->
 		<div class="owl-carousel webtoon__bg">
@@ -424,14 +429,14 @@
 						<div class="item" style="width: 255px; margin-right: 80px;">
 							<!-- card -->
 							<div class="card card--big">
-								<div class="card__cover" onclick="goView4('<%=tempDto.getBoard_seq()%>')">
+								<div class="card__cover" onclick="goToonView('<%=tempDto.getBoard_seq()%>')">
 									<img src="<%=request.getContextPath() %>/resources/webtoon_img/<%=tempDto.getToon_images()%>" alt="" style="height: 320px;object-fit: cover;">
 									<a href="#" class="card__play">
 										<i class="icon ion-ios-play"></i>
 									</a>
 								</div>
 								<div class="card__content">
-									<h3 class="card__title" onclick="goView4('<%=tempDto.getBoard_seq()%>')"><a href="#"><%=tempDto.getToon_title() %></a></h3>
+									<h3 class="card__title" onclick="goToonView('<%=tempDto.getBoard_seq()%>')"><a href="#"><%=tempDto.getToon_title() %></a></h3>
 									<span class="card__category">
 										<%
 									if(tempDto.getGenre_code().equals("00")){ %>
@@ -457,7 +462,7 @@
 										<%}%>
 										
 									</span>
-									<span class="card__rate"><i class="icon ion-ios-star"></i><%=tempDto.getToon_hit() %></span>
+									<span class="card__rate"><i class="icon ion-ios-star"></i><%=tempDto.getStar_avg() %></span>
 								</div>
 							</div>
 						</div>
@@ -482,25 +487,28 @@
 
 <script>
 
-function goView(seq){
+function goMovieView(seq){
 	let frm = document.movieForm;
 	frm.board_seq.value=seq;///////////
+	frm.category_code.value="00";
 	frm.method="get";
 	frm.action="${pageContext.request.contextPath}/movie/view";
 	frm.submit();
 }
 
-function goView1(seq){
+function goDramaView(seq){
 	let frm = document.dramaForm;
 	frm.board_seq.value=seq;///////////
+	frm.category_code.value="01";
 	frm.method="get";
 	frm.action="${pageContext.request.contextPath}/drama/view";
 	frm.submit();
 }
 
-function goView2(seq){
+function goEnterView(seq){
 	let frm = document.enterForm;
 	frm.board_seq.value=seq;///////////
+	frm.category_code.value="02";
 	frm.method="get";
 	frm.action="${pageContext.request.contextPath}/enter/view";
 	frm.submit();
@@ -508,17 +516,19 @@ function goView2(seq){
 
 
 
-function goView3(seq){
+function goAniView(seq){
 	let frm = document.aniform;
 	frm.board_seq.value=seq;///////////
+	frm.category_code.value="03";
 	frm.method="get";
 	frm.action="${pageContext.request.contextPath}/animaiton/view";
 	frm.submit();
 }
 
-function goView4(seq){
+function goToonView(seq){
 	let frm = document.webtoonForm;
 	frm.board_seq.value=seq;///////////
+	frm.category_code.value="04";
 	frm.method="get";
 	frm.action="${pageContext.request.contextPath}/webtoon/view";
 	frm.submit();
