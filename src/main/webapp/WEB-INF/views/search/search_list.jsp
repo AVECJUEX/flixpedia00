@@ -16,7 +16,7 @@
 	
 	<%
 		request.setAttribute("commonURL", request.getContextPath());
-		String key = StringUtil.nullToValue(request.getParameter("key"), "1");
+		String key = StringUtil.nullToValue(request.getParameter("key"), "10");
 		String keyword = StringUtil.nullToValue(request.getParameter("keyword"), "");
 		String pg = StringUtil.nullToValue(request.getParameter("pg"), "0");
 		int totalCnt = (Integer)request.getAttribute("totalCnt");
@@ -74,7 +74,7 @@
 	
 									<ul class="filter__item-menu dropdown-menu scrollbar-dropdown" aria-labelledby="filter-genre">
 										
-										<li><a onclick="changeSearch('7')">전체</a></li>
+									<li><a onclick="changeSearch('10')">전체</a></li>
 										<li><a onclick="changeSearch('0')">Action</a></li>
 										<li><a onclick="changeSearch('1')">Romance</a></li>
 										<li><a onclick="changeSearch('2')">Comedy</a></li>
@@ -82,10 +82,12 @@
 										<li><a onclick="changeSearch('4')">Horror</a></li>
 										<li><a onclick="changeSearch('5')">Fantasy</a></li>
 										<li><a onclick="changeSearch('6')">Drama</a></li>
+										<li><a onclick="changeSearch('7')">Animation</a></li>
+										<li><a onclick="changeSearch('8')">Action/Adventure</a></li>
+										<li><a onclick="changeSearch('9')">Mystery</a></li>
 										
 									</ul>
-									<button class="sign__btn" type="button" onclick="goSearch()" 
-											style="width:100px; height: 30px; margin:2px;">검색</button>
+									
 								</div>
 								<!-- end filter item -->
 	
@@ -94,7 +96,7 @@
 							</div>
 							
 							<!-- filter btn -->
-							<button class="filter__btn" type="button">apply filter</button>
+							<button class="filter__btn"  onclick="goSearch()" type="button">apply filter</button>
 							<!-- end filter btn -->
 						</div>
 					</div>
@@ -161,13 +163,13 @@
 <script>
 window.onload=function(){
 	let key = '<%=key%>';
-	var texts=["Action", "Romance", "Comedy", "Thriller/Crime", "Horror","Fantasy","Drama","전체"];
+	var texts=["Action", "Romance", "Comedy", "Thriller/Crime", "Horror","Fantasy","Drama","Animation","Action/Adventure","Mystery","전체"];
 	
 	document.getElementById("searchItem").value=texts[key];
 }
 function changeSearch(id)
 {
-	var texts=["Action", "Romance", "Comedy", "Thriller/Crime", "Horror","Fantasy","Drama","전체"];
+	var texts=["Action", "Romance", "Comedy", "Thriller/Crime", "Horror","Fantasy","Drama","Animation","Action/Adventure","Mystery","전체"];
 	document.getElementById("searchItem").value=texts[id]; //화면에 보이기 위해서 
 	document.getElementById("key").value=id;//컨트롤러로 넘기기 위해서
 	
