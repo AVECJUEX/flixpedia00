@@ -10,6 +10,15 @@ public class SearchDto extends BaseDto{
 	private String images="";
 	private String genre_name="";
 	private String ratings="";
+	private String star_avg="";
+	
+	
+	public String getStar_avg() {
+		return star_avg;
+	}
+	public void setStar_avg(String star_avg) {
+		this.star_avg = star_avg;
+	}
 	public String getCategory_code() {
 		return category_code;
 	}

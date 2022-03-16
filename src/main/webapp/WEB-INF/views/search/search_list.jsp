@@ -130,7 +130,7 @@
 								<span class="card__category" style="color:white">
 								<%=tempDto.getGenre_name() %>
 								</span>
-								<span class="card__rate"><i class="icon ion-ios-star"></i><%=tempDto.getRatings() %></span>
+								<span class="card__rate"><i class="icon ion-ios-star"></i><%=tempDto.getStar_avg() %></span>
 							</div>
 						</div>
 					</div>
