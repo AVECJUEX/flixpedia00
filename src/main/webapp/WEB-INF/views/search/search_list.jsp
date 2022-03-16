@@ -38,7 +38,7 @@
 				<div class="col-12">
 					<div class="section__wrap">
 						<!-- section title -->
-						<h2 class="section__title">검색결과</h2>
+						<h2 class="section__title">'<%=keyword %>' 검색결과</h2>
 						<!-- end section title -->
 
 						<!-- breadcrumb -->
@@ -53,6 +53,7 @@
 <form name="myform" method="get">
 	<input type="hidden" name="pg"  id="pg" value="<%=pg%>"/>
 	<input type="hidden" name="key" id="key" value="<%=key%>"/>
+	<input type="hidden" name="keyword" id="keyword" value="<%=keyword%>"/>
 	<input type="hidden" name="board_seq"  id="board_seq" value=""/>
 	<input type="hidden" name="category_code"  id="category_code" value=""/>
 	
@@ -74,7 +75,7 @@
 	
 									<ul class="filter__item-menu dropdown-menu scrollbar-dropdown" aria-labelledby="filter-genre">
 										
-										<li><a onclick="changeSearch('7')">전체</a></li>
+											<li><a onclick="changeSearch('10')">전체</a></li>
 										<li><a onclick="changeSearch('0')">Action</a></li>
 										<li><a onclick="changeSearch('1')">Romance</a></li>
 										<li><a onclick="changeSearch('2')">Comedy</a></li>
@@ -82,10 +83,12 @@
 										<li><a onclick="changeSearch('4')">Horror</a></li>
 										<li><a onclick="changeSearch('5')">Fantasy</a></li>
 										<li><a onclick="changeSearch('6')">Drama</a></li>
+										<li><a onclick="changeSearch('7')">Animation</a></li>
+										<li><a onclick="changeSearch('8')">Action/Adventure</a></li>
+										<li><a onclick="changeSearch('9')">Mystery</a></li>
 										
 									</ul>
-									<button class="sign__btn" type="button" onclick="goSearch()" 
-											style="width:100px; height: 30px; margin:2px;">검색</button>
+								
 								</div>
 								<!-- end filter item -->
 	
@@ -94,7 +97,7 @@
 							</div>
 							
 							<!-- filter btn -->
-							<button class="filter__btn" type="button">apply filter</button>
+							<button class="filter__btn" type="button"  onclick="goSearch()">apply filter</button>
 							<!-- end filter btn -->
 						</div>
 					</div>
@@ -116,11 +119,27 @@
 					<div class="col-6 col-sm-4 col-lg-3 col-xl-2">
 						<div class="card">
 							<div class="card__cover">
+								<%if(tempDto.getCategory_code().equals("00")){ %>
+								<img src="${commonURL}/resources/movie_img/<%=tempDto.getImages() %>" style="height: 230px;object-fit: cover;">
+								<a href="#" class="card__play" onclick="goView('<%=tempDto.getCategory_code()%>', '<%=tempDto.getBoard_seq()%>')"></a>
+									<%} %>
+								<%if(tempDto.getCategory_code().equals("01")){ %>
+								<img src="${commonURL}/resources/drama_img/<%=tempDto.getImages() %>" style="height: 230px;object-fit: cover;">
+								<a href="#" class="card__play" onclick="goView('<%=tempDto.getCategory_code()%>', '<%=tempDto.getBoard_seq()%>')"></a>
+									<%} %>
+								<%if(tempDto.getCategory_code().equals("02")){ %>
+								<img src="${commonURL}/resources/enter_img/<%=tempDto.getImages() %>" style="height: 230px;object-fit: cover;">
+								<a href="#" class="card__play" onclick="goView('<%=tempDto.getCategory_code()%>', '<%=tempDto.getBoard_seq()%>')"></a>
+									<%} %>
+								<%if(tempDto.getCategory_code().equals("03")){ %>
+								<img src="${commonURL}/resources/animation_img/<%=tempDto.getImages() %>" style="height: 230px;object-fit: cover;">
+								<a href="#" class="card__play" onclick="goView('<%=tempDto.getCategory_code()%>', '<%=tempDto.getBoard_seq()%>')"></a>
+									<%} %>
+								<%if(tempDto.getCategory_code().equals("04")){ %>
+								<img src="${commonURL}/resources/webtoon_img/<%=tempDto.getImages() %>" style="height: 230px;object-fit: cover;">
+								<a href="#" class="card__play" onclick="goView('<%=tempDto.getCategory_code()%>', '<%=tempDto.getBoard_seq()%>')"></a>
+									<%} %>
 								
-								<img src="${commonURL}/resources/imgview/<%=tempDto.getImages() %>" style="height: 230px;object-fit: cover;">
-								<a href="#" class="card__play" onclick="goView('<%=tempDto.getCategory_code()%>', '<%=tempDto.getBoard_seq()%>')">
-									
-								</a>
 						
 								
 							</div>
@@ -161,13 +180,13 @@
 <script>
 window.onload=function(){
 	let key = '<%=key%>';
-	var texts=["Action", "Romance", "Comedy", "Thriller/Crime", "Horror","Fantasy","Drama","전체"];
-	
+	var texts=["Action", "Romance", "Comedy", "Thriller/Crime", "Horror","Fantasy","Drama","Animation","Action/Adventure","Mystery","전체"];
+
 	document.getElementById("searchItem").value=texts[key];
 }
 function changeSearch(id)
 {
-	var texts=["Action", "Romance", "Comedy", "Thriller/Crime", "Horror","Fantasy","Drama","전체"];
+	var texts=["Action", "Romance", "Comedy", "Thriller/Crime", "Horror","Fantasy","Drama","Animation","Action/Adventure","Mystery","전체"];
 	document.getElementById("searchItem").value=texts[id]; //화면에 보이기 위해서 
 	document.getElementById("key").value=id;//컨트롤러로 넘기기 위해서
 	

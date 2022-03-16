@@ -156,7 +156,7 @@ String userimage= StringUtil.nullToValue(session.getAttribute("userimage"), "");
 
       e.preventDefault();
       var url = "${commonURL}/search/search_list";
-      url = url + "?keyword=" + $('#keyword').val();
+      url = url + "?keyword=" + $('#keyword').val() + "&key=10";
       location.href = url;
       console.log(url);
    });
