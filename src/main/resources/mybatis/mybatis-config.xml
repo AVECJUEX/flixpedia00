@@ -18,6 +18,9 @@
     	<typeAlias alias="AnimationDto" type="com.semi.flix.animation.AnimationDto"/>
     	<typeAlias alias="EnterDto" 	type="com.semi.flix.enter.EnterDto"/>
     	<typeAlias alias="VisitDto" 	type="com.semi.flix.Visit.VisitDto"/>
+    	<typeAlias alias="Q_A_DTO"      type="com.semi.flix.Q_A.Q_A_DTO"/>
+    	<typeAlias alias="NoticeDTO"    type="com.semi.flix.notice.NoticeDTO"/>
+
     	
     	<typeAlias alias="AdminMemberDto" type="com.semi.flix.admin.member.AdminMemberDto"/>
 	    <typeAlias alias="AdminBoardDto" type="com.semi.flix.admin.board.AdminBoardDto"/>
@@ -44,7 +47,9 @@
 		<mapper resource=	"/com/semi/flix/mapper/Movie.xml"/>
 		<mapper resource=	"/com/semi/flix/mapper/Enter.xml"/>
 		<mapper resource=	"/com/semi/flix/mapper/Visit.xml"/>
-		
+		<mapper resource=   "/com/semi/flix/mapper/Notice.xml"/>
+		<mapper resource=   "/com/semi/flix/mapper/Q_A.xml"/>
+    
 		<mapper resource=	"/com/semi/flix/admin/mapper/AdminMember.xml"/>
 		<mapper resource=	"/com/semi/flix/admin/mapper/AdminBoard.xml"/>
 		<mapper resource=	"/com/semi/flix/admin/mapper/MovieBoard.xml"/>
@@ -57,8 +62,7 @@
 		<mapper resource=	"/com/semi/flix/admin/mapper/Mail.xml"/>
 		<mapper resource=	"/com/semi/flix/admin/mapper/AdminQ_A.xml"/>
 		<mapper resource=	"/com/semi/flix/admin/mapper/Comment.xml"/>
-
-		
+	
 	</mappers>
 	
 </configuration>
