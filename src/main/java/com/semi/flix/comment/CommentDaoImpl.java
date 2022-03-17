@@ -16,7 +16,7 @@ public class CommentDaoImpl implements CommentDao{
 
 	@Override
 	public void commentinsert(CommentDto dto) {
-		sm.insert("commentinsert",dto);
+		sm.insert("Comment.commentinsert",dto);
 		
 	}
 
@@ -31,7 +31,7 @@ public class CommentDaoImpl implements CommentDao{
 	@Override
 	public List<CommentDto> commentList(CommentDto dto) {
 		// TODO Auto-generated method stub
-		return sm.selectList("Comment_getList",dto);
+		return sm.selectList("Comment.Comment_getList",dto);
 	}
 
 
@@ -41,7 +41,7 @@ public class CommentDaoImpl implements CommentDao{
 	
 	@Override
 	public int commentTotal(CommentDto dto) {
-		return sm.selectOne("Comment_count",dto);
+		return sm.selectOne("Comment.Comment_count",dto);
 	}
 
 
@@ -54,7 +54,7 @@ public class CommentDaoImpl implements CommentDao{
 
 	@Override
 	public void comment_delete(CommentDto dto) {
-		sm.delete("Comment_delete",dto);
+		sm.delete("Comment.Comment_delete",dto);
 	}
 		
 
