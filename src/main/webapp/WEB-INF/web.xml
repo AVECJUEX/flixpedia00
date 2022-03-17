@@ -40,12 +40,21 @@
 			<param-name>contextConfigLocation</param-name>
 			<param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
 		</init-param>
-		<load-on-startup>1</load-on-startup>
 	</servlet>
 		
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+	<!-- 404에러 발생시 404에러 페이지 커스텀 -->
+	<error-page>
+	    <error-code>404</error-code>
+	    <location>/error.jsp</location>
+	</error-page>
+	<!-- 500에러 발생시 500에러 페이지 커스텀 -->
+	<error-page>
+	    <error-code>500</error-code>
+	    <location>/error.jsp</location>
+	</error-page>
 
 </web-app>
