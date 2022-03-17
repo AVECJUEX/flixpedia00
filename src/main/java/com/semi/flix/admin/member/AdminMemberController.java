@@ -67,8 +67,8 @@ public class AdminMemberController {
 	}
 	
 	@RequestMapping("/admin/adminmember/isDuplicate")
-	@ResponseBody	//Ajax요청시 데이터가 출려돼야 한다. jsp 이동을 막는다.
-					//자바 객체를 json형태로 전환시켜서 반환한다.
+	@ResponseBody	//Ajax�슂泥��떆 �뜲�씠�꽣媛� 異쒕젮�뤌�빞 �븳�떎. jsp �씠�룞�쓣 留됰뒗�떎.
+					//�옄諛� 媛앹껜瑜� json�삎�깭濡� �쟾�솚�떆耳쒖꽌 諛섑솚�븳�떎.
 	public HashMap<String, String> adminmember_isDuplicate(AdminMemberDto dto)
 	{
 		System.out.println("userid : " + dto.getUserid());
@@ -99,9 +99,9 @@ public class AdminMemberController {
 	@ResponseBody
 	public HashMap<String, String> adminmember_login_proc(AdminMemberDto dto, HttpServletRequest request)
 	{
-		//각 페이지별로 정보 공유가 안된다.
-		//예외(쿠키 또는 세션 - 세션을 많이 사용한다.)
-		//쿠키 - 본인 컴퓨터에 / 세션 - 서버에(보안을 강화시키고자 할때)
+		//媛� �럹�씠吏�蹂꾨줈 �젙蹂� 怨듭쑀媛� �븞�맂�떎.
+		//�삁�쇅(荑좏궎 �삉�뒗 �꽭�뀡 - �꽭�뀡�쓣 留롮씠 �궗�슜�븳�떎.)
+		//荑좏궎 - 蹂몄씤 而댄벂�꽣�뿉 / �꽭�뀡 - �꽌踰꾩뿉(蹂댁븞�쓣 媛뺥솕�떆�궎怨좎옄 �븷�븣)
 		HttpSession session = request.getSession();
 		
 		AdminMemberDto resultDto = adminmemberService.getInfo(dto);
@@ -117,7 +117,7 @@ public class AdminMemberController {
 		{
 			if(resultDto.getPassword().equals(dto.getPassword()))
 			{
-				map.put("flag", "1");	//로그인 성공시 세션에 정보를 저장한다.
+				map.put("flag", "1");	//濡쒓렇�씤 �꽦怨듭떆 �꽭�뀡�뿉 �젙蹂대�� ���옣�븳�떎.
 				session.setAttribute("id", resultDto.getId());
 				session.setAttribute("userid", resultDto.getUserid());
 				session.setAttribute("username", resultDto.getUsername());///////
@@ -137,7 +137,7 @@ public class AdminMemberController {
 	public String adminmember_logout(HttpServletRequest request)
 	{
 		HttpSession session = request.getSession();
-		session.invalidate();	//세션의 데이터 삭제
+		session.invalidate();	//�꽭�뀡�쓽 �뜲�씠�꽣 �궘�젣
 		
 		return "redirect:admin/adminindex";
 	}
@@ -158,7 +158,7 @@ public class AdminMemberController {
 	@ResponseBody
 	public HashMap<String,String> adminmember_findId_proc(AdminMemberDto dto)
 	{
-		// 이름, 이메일,, 전화번호 확신
+		// �씠由�, �씠硫붿씪,, �쟾�솕踰덊샇 �솗�떊
 		System.out.println("[adminmember_findId_proc----->]"+dto);
 		AdminMemberDto findDto = adminmemberService.findId(dto);
 		System.out.println(findDto);

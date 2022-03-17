@@ -2542,6 +2542,7 @@ ul {
   box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
   margin: 15px 0;
   position: relative;
+  width : 100%;
 }
 .price--premium:before {
   content: '';
@@ -2557,6 +2558,7 @@ ul {
   background-image: linear-gradient(90deg, #ff55a5 0%, #ff5860 100%);
   -webkit-box-shadow: 0 0 20px 0 rgba(255,88,96,0.5);
   box-shadow: 0 0 20px 0 rgba(255,88,96,0.5);
+  width : 100%;
 }
 .price--premium .price__item:before {
   background-image: -moz-linear-gradient(90deg, #ff55a5 0%, #ff5860 100%);
@@ -2570,7 +2572,9 @@ ul {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  font-size: 15px;
+  font-size: 18px;
+  
+  font-weight : bold;
   color: rgba(255,255,255,0.7);
   margin-top: 10px;
   padding-top: 10px;
@@ -3636,6 +3640,118 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   }
 }
 /*==============================
+   QA2_Accordion
+==============================*/
+.qa2_accordion {
+  background-color: #28282d;
+  padding: 20px;
+  overflow: hidden;
+  max-height: 500px;
+  height: 500px;
+  width: 100%;
+ 
+}
+.qa2_accordion__card {
+  background-color: #2b2b31;
+  margin-bottom: 20px;
+}
+.qa2_accordion__card:last-child {
+  margin-bottom: 0;
+}
+.qa2_accordion__card .card-header button {
+  width: 100%;
+  text-align: left;
+  padding: 10px 45px 10px 15px;
+  position: relative;
+}
+.qa2_accordion__card .card-header button span {
+  display: block;
+}
+.qa2_accordion__card .card-header button span:first-child {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 300;
+  -webkit-transition: 0.4s ease;
+  -moz-transition: 0.4s ease;
+  transition: 0.4s ease;
+  margin: 0;
+}
+.qa2_accordion__card .card-header button span:last-child {
+  color: rgba(255,255,255,0.5);
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+}
+.qa2_accordion__card .card-header button:before {
+  content: '\f3d0';
+  font-family: "Ionicons";
+  position: absolute;
+  display: block;
+  background-image: -webkit-linear-gradient(0deg, #ff55a5 0%, #ff5860 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #ff5860;
+  font-size: 24px;
+  right: 15px;
+  top: 50%;
+  height: 40px;
+  line-height: 40px;
+  margin-top: -20px;
+  -webkit-transition: 0.4s ease;
+  -moz-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+.qa2_accordion__card .card-header button[aria-expanded="true"]:before {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.qa2_accordion__card .card-header button[aria-expanded="true"] span:first-child {
+  color: #ff55a5;
+}
+.qa2_accordion__card .card-header button:hover span:first-child {
+  color: #ff55a5;
+}
+.qa2_accordion__card .card-body {
+  padding: 10px 15px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+.qa2_accordion__list {
+  width: 100%;
+}
+.qa2_accordion__list thead tr {
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.qa2_accordion__list thead th {
+  color: rgba(255,255,255,0.7);
+  font-size: 14px;
+  font-weight: 400;
+  padding: 5px 10px;
+  font-family: 'Open Sans', sans-serif;
+}
+.qa2_accordion__list tbody tr {
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  cursor: pointer;
+}
+.qa2_accordion__list tbody tr:hover {
+  background-color: rgba(255,255,255,0.01);
+}
+.qa2_accordion__list tbody tr:last-child {
+  border-bottom: none;
+}
+.qa2_accordion__list tbody th,
+.qa2_accordion__list tbody td {
+  color: rgba(255,255,255,0.5);
+  font-size: 14px;
+  padding: 5px 10px 5px;
+  font-family: 'Open Sans', sans-serif;
+}
+@media (min-width: 1200px) {
+  .qa2_accordion {
+    height: auto;
+  }
+}
+/*==============================
 	Footer
 ==============================*/
 .footer {
@@ -3890,6 +4006,61 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   letter-spacing: 0.2px;
   font-family: 'Open Sans', sans-serif;
 }
+
+.sign__qna {
+	vertical-align : middle;
+  background-color: #2b2b31;
+  border: none;
+  height: 50px;
+  position: relative;
+  color: #fff;
+  font-size: 15px;
+  width: 100%;
+  color: #fff;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  padding: 0 20px;
+  letter-spacing: 0.2px;
+  font-family: 'Open Sans', sans-serif;
+   margin-left: 0px;
+   -webkit-box-shadow: 0 0 20px 0 rgba(255,88,96,0.5);
+}  
+.sign__qna__write {
+	vertical-align : middle;
+  background-color: #2b2b31;
+  border: none;
+  height: 50px;
+  position: relative;
+  color: #fff;
+  font-size: 15px;
+  width: 85%;
+  color: #fff;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  padding: 0 20px;
+  letter-spacing: 0.2px;
+  font-family: 'Open Sans', sans-serif;
+   margin-left: 0px;
+   -webkit-box-shadow: 0 0 20px 0 rgba(255,88,96,0.5);
+}  
+.sign__span {
+	 vertical-align : middle;
+	  display : inline-block;
+	  background-color: #2b2b31;
+	  
+	  height: 50px;
+	  font-weight:bold;
+	  color: #fff;
+	  font-size: 15px;
+	  width: 9%;
+	  color: #fff;
+	  -webkit-border-radius: 0;
+	  border-radius: 0;
+	  padding: 14px 20px;
+	  letter-spacing: 0.2px;
+	  font-family: 'Open Sans', sans-serif;
+	  margin-right : 0px; 
+}
 .upload-name {
   background-color: #2b2b31;
   border: none;
@@ -3904,6 +4075,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   padding: 0 20px;
   letter-spacing: 0.2px;
   font-family: 'Open Sans', sans-serif;
+ 
 }
 #upload {
     position: absolute;
@@ -3946,6 +4118,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   position: relative;
   margin-bottom: 20px;
 }
+
 .sign__group--checkbox {
   width: 100%;
   text-align: left;

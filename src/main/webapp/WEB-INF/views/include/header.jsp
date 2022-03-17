@@ -64,8 +64,8 @@ String userimage= StringUtil.nullToValue(session.getAttribute("userimage"), "");
 									<a class="dropdown-toggle header__nav-link header__nav-link--more" href="#" role="button" id="dropdownMenuMore" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icon ion-ios-more"></i></a>
 
 									<ul class="dropdown-menu header__dropdown-menu" aria-labelledby="dropdownMenuMore">
-										<li><a href="about.html">Q&A</a></li> <!-- list,view작업 안됨 -->
-										<li><a href="about.html">공지사항</a></li> <!-- list,view작업 안됨 -->
+										<li><a href="${commonURL}//getQ_A_List.do">Q&A</a></li> <!-- list,view작업 안됨 -->
+										<li><a href="${commonURL}/getNotice_List.do">공지사항</a></li> <!-- list,view작업 안됨 -->
 									
 										<li><a href="${commonURL}/admin/adminindex">관리자페이지</a></li>
 										

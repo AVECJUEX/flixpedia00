@@ -5,39 +5,103 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
     
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
+<html lang="en">
 
-<body>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	
+	<%@include file="../include/css.jsp" %>
+	<title>FlixGo – Online Movies, TV Shows & Cinema HTML Template</title>
+
+</head>
+<body class="body">
+	
+	<%@include file="../include/header.jsp" %>
+
+	<section class="home">
+		<!-- 카졸 백그라운드 이미지 home bg -->
+		<div class="owl-carousel home__bg">
+			<div class="item home__cover" data-bg="img/home/home__bg.jpg"></div>
+			<div class="item home__cover" data-bg="img/home/home__bg2.jpg"></div>
+			<div class="item home__cover" data-bg="img/home/home__bg3.jpg"></div>
+			<div class="item home__cover" data-bg="img/home/home__bg4.jpg"></div>
+		</div>
+		<!-- 카졸 백그라운드 이미지 끝end home bg -->
+
+		<!-- 카졸 내용-->
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h1 class="home__title"><b>공지사항</b></h1>
+					
+				</div>
+			</div>
+		</div>
+		<br>
+		<br>		
+		<!--========================================================= accordion ============================================================-->
+		<div class="container">
+				
+					<div class="qa2_accordion" id="qa2_accordion" >
+						<div class="qa2_accordion__card">
+							<div class="qa2_card-header" id="headingOne">
+								</div>
+							
+							<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+								<div class="qa2_card-body">
+									<table class="qa2_accordion__list">
+										<thead>
+											<tr>
+												<th>글번호</th>
+												<th>제목</th>
+												<th>내용</th>
+												<th>등록일</th>
+												<th>조회수</th>
+												<th>아이디</th>
+											</tr>
+										</thead>
+			
+										<tbody>
+											<c:forEach items="${notice_List}" var="notice">
+												<tr>
+													<td>${ notice.notice_seq }</td>
+													<td align="left"><a	href="getNotice.do?notice_seq=${ notice.notice_seq }">
+													 ${ notice.notice_title }</a></td>
+													<td>${notice.notice_content  }</td>
+													<%-- <td><fmt:formatDate value="${ notice.wdate }" pattern="yyyy-MM-dd" /></td> --%>
+													<td>${notice.wdate  }</td>
+													<td>${notice.notice_hit  }</td>
+													<td>${notice.user_id  }</td>
+												</tr>
+											</c:forEach>
+										</tbody>
+									</table>
+									
+								</div>
+							</div>
+						</div>
+					
+					</div>
+									<div class="card__description">
+						
+									<button class="sign__btn" type="button" 
+							style="width:100px; height: 30px; margin:2px; float: right;"  onclick="location.href='go_insertNotice.do'">글 쓰기</button>
+							</div>
+				
+			
+		</div>
+		<!--========================================================= end accordion ==============================================================-->
+	</section>
+	<!-- ********************************************************카졸 끝 end home ***************************************************-->
 
 
 	
-	<table border="1" cellpadding="0" cellspacing="0" width="700">
-			<tr>
-				<th bgcolor="orange" width="100">글번호
-				<th bgcolor="orange" width="200">제목
-				<th bgcolor="orange" width="150">내용
-				<th bgcolor="orange" width="150">등록일
-				<th bgcolor="orange" width="150">조회수
-				<th bgcolor="orange" width="150">아이디
-			</tr>
-		<c:forEach items="${notice_List}" var="notice">
-				<tr>
-					<td>${ notice.notice_seq }</td>
-					<td align="left"><a	href="getNotice.do?notice_seq=${ notice.notice_seq }">
-					 ${ notice.notice_title }</a></td>
-					<td>${notice.notice_content  }</td>
-					<%-- <td><fmt:formatDate value="${ notice.wdate }" pattern="yyyy-MM-dd" /></td> --%>
-					<td>${notice.wdate  }</td>
-					<td>${notice.notice_hit  }</td>
-					<td>${notice.user_id  }</td>
-				</tr>
-			</c:forEach>
-		</table>
-		<br> <a href="go_insertNotice.do">새 글 등록</a>
+<%@include file="../include/footer.jsp" %>
 
+	
 </body>
+
+
 </html>

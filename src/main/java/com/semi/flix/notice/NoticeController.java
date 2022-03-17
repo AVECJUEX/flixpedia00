@@ -55,24 +55,24 @@ public class NoticeController {
 	
 	@RequestMapping(value = "/getNotice.do")
 	public String getNotice(Model model, NoticeDTO dto) {
-		model.addAttribute("notice", notice_Service.getNotice(dto)); // Model ���� ����
-		System.out.println("===> Mybatis�� getNotice() ��� ó��");
-		return "notice/getNotice"; // View �̸� ����
+		model.addAttribute("notice", notice_Service.getNotice(dto)); // Model 占쏙옙占쏙옙 占쏙옙占쏙옙
+		System.out.println("===> Mybatis占쏙옙 getNotice() 占쏙옙占� 처占쏙옙");
+		return "notice/getNotice"; // View 占싱몌옙 占쏙옙占쏙옙
 	}
-	@RequestMapping(value = "/getNotice_List.do")
+	@RequestMapping(value = "getNotice_List.do")
 	public String getNotice_List(Model model, NoticeDTO dto, HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
 
-		System.out.println("===> Mybatis�� getNoticeList() ��� ó��");
+		System.out.println("===> Mybatis占쏙옙 getNoticeList() 占쏙옙占� 처占쏙옙");
 		System.out.println("===========1111==========" + dto.getId());
 
 		dto.setId((String) session.getAttribute("id"));
 
 		model.addAttribute("notice_List", notice_Service.getNotice_List(dto));
-		System.out.println("===> ��Ʈ�ѷ� getNoticeList() ���ó����");
+		System.out.println("===> 占쏙옙트占싼뤄옙 getNoticeList() 占쏙옙占시놂옙占쏙옙占�");
 		System.out.println(model);
 		// return "redirect:getNoticeList.do";
-		return "notice/getNotice_List"; // View �̸� ����
+		return "notice/getNotice_List"; // View 占싱몌옙 占쏙옙占쏙옙
 	}
 }
 	
