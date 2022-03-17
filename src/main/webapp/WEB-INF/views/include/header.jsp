@@ -141,6 +141,7 @@ String userimage= StringUtil.nullToValue(session.getAttribute("userimage"), "");
                   
                      <input type="text" placeholder="제목, 감독, 콘텐츠를 검색해보세요." name="keyword" id="keyword"
                      aria-label="Search">
+                     <input type="hidden" id="key" name="key" value="10">
                      <button type="button" name="btnSearch" id="btnSearch">search</button>
                   </div>
                </div>
@@ -152,6 +153,7 @@ String userimage= StringUtil.nullToValue(session.getAttribute("userimage"), "");
    <!-- end header -->
    
    <script>
+   
    $(document).on('click', '#btnSearch', function(e){
 
       e.preventDefault();

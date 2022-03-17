@@ -92,7 +92,7 @@
 				</if> 
 			
             A.title like concat('%', '${keyword}','%')
-     		 or A.producer like concat('%', '${keyword}','%')
+     		or A.producer like concat('%', '${keyword}','%')
       </select>
    
 </mapper>
