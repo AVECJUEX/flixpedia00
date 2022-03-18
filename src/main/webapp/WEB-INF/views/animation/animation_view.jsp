@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<%@include file="../include/css.jsp" %>
-	<title>FlixGo – Online Movies, TV Shows & Cinema HTML Template</title>
+	<title>FlixPedia – Online Movies, TV Shows & Cinema HTML Template</title>
 </head>
 <body class="body">
 	<%
@@ -88,7 +88,7 @@
 													<%}%>
 										</li>
 										<li><span>출시년:</span> <%=dto.getAni_productionyear() %></li>
-										<li><span>작가:</span> <%=dto.getAni_author() %></li>
+										<li><span>작가:</span> <%=dto.getAni_producer() %></li>
 									</ul>
 
 									<div class="card__description card__description--details">

@@ -13,7 +13,7 @@
 
 	
 	<%@include file="../include/css.jsp" %>
-	<title>FlixGo – Online Movies, TV Shows & Cinema HTML Template</title>
+	<title>FlixPedia – Online Movies, TV Shows & Cinema HTML Template</title>
 
 </head>
 <body class="body">

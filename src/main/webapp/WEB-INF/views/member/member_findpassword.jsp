@@ -19,7 +19,7 @@ request.setAttribute("commonURL", request.getContextPath());
 					<div class="sign__content">
 		<form  class="sign__form"  name="myform" id="myform">
 			<a href="index.html" class="sign__logo">
-				<img src="<%=request.getContextPath() %>/resources/img/logo.svg" alt="">
+				<img src="${commonURL}/resources/img/logoimg.png" alt="">
 			</a>
 		   <input type="hidden" name="idcheck" id="idcheck" value="N"/>
 		   

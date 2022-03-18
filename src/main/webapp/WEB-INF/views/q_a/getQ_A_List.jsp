@@ -13,7 +13,7 @@
 
 	
 	<%@include file="../include/css.jsp" %>
-	<title>FlixGo – Online Movies, TV Shows & Cinema HTML Template</title>
+	<title>FlixPedia – Online Movies, TV Shows & Cinema HTML Template</title>
 
 </head>
 <body class="body">
@@ -79,17 +79,17 @@
 						</div>
 					
 					</div>
+				
+							
+		</div>
+		</div>
+		</div>
 									<div class="card__description">
 						
 									<button class="sign__btn" type="button" id="qnaWrite" 
 										style="width:100px; height: 30px; margin:2px; float: right;">글쓰기</button>
 									
 									</div>
-				
-			
-		</div>
-		</div>
-		</div>
 		</div>
 		<!--========================================================= end accordion ==============================================================-->
 	</section>

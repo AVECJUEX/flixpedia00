@@ -77,7 +77,7 @@
 							<!-- card -->
 							<div class="card card--big">
 								<div class="card__cover" onclick="goMovieView('<%=tempDto.getBoard_seq()%>')">
-									<img src="<%=request.getContextPath()%>/resources/movie_img/<%=tempDto.getMovie_images()%>" alt="" style="height: 320px;object-fit: cover;">
+									<img src="upload/<%=tempDto.getMovie_images()%>" alt="" style="height: 320px;object-fit: cover;">
 									<a href="#" class="card__play">
 										<i class="icon ion-ios-play"></i>
 									</a>
@@ -165,7 +165,7 @@
 							<!-- card -->
 							<div class="card card--big">
 								<div class="card__cover" onclick="goDramaView('<%=tempDto.getBoard_seq()%>')">
-									<img src="<%=request.getContextPath()%>/resources/drama_img/<%=tempDto.getDrama_images()%>" alt="" style="height: 320px;object-fit: cover;">
+									<img src="upload/<%=tempDto.getDrama_images()%>" alt="" style="height: 320px;object-fit: cover;">
 									<a href="#" class="card__play">
 										<i class="icon ion-ios-play"></i>
 									</a>
@@ -255,7 +255,7 @@
 							<!-- card -->
 							<div class="card card--big">
 								<div class="card__cover" onclick="goEnterView('<%=tempDto.getBoard_seq()%>')">
-									<img src="<%=request.getContextPath()%>/resources/enter_img/<%=tempDto.getEnter_images()%>" alt="" style="height: 320px;object-fit: cover;">
+									<img src="upload/<%=tempDto.getEnter_images()%>" alt="" style="height: 320px;object-fit: cover;">
 									<a href="#" class="card__play">
 										<i class="icon ion-ios-play"></i>
 									</a>
@@ -343,7 +343,7 @@
 							<!-- card -->
 							<div class="card card--big">
 								<div class="card__cover" onclick="goAniView('<%=tempDto.getBoard_seq()%>')">
-									<img src="<%=request.getContextPath() %>/resources/animation_img/<%=tempDto.getAni_images()%>" alt="" style="height: 320px;object-fit: cover;">
+									<img src="upload/<%=tempDto.getAni_images()%>" alt="" style="height: 320px;object-fit: cover;">
 									<a href="#" class="card__play">
 										<i class="icon ion-ios-play"></i>
 									</a>
@@ -430,7 +430,7 @@
 							<!-- card -->
 							<div class="card card--big">
 								<div class="card__cover" onclick="goToonView('<%=tempDto.getBoard_seq()%>')">
-									<img src="<%=request.getContextPath() %>/resources/webtoon_img/<%=tempDto.getToon_images()%>" alt="" style="height: 320px;object-fit: cover;">
+									<img src="upload/<%=tempDto.getToon_images()%>" alt="" style="height: 320px;object-fit: cover;">
 									<a href="#" class="card__play">
 										<i class="icon ion-ios-play"></i>
 									</a>

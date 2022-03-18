@@ -28,11 +28,11 @@ public class MemberController {
 	MemberService memberService;
 	
 
-	//�쉶�뜝�룞�삕�뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕�뜝�룞�삕�뜝�룞�삕 �뜝�떛�벝�삕
+	//占쎌돳占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈뼓占쎈쿈占쎌굲
 	@RequestMapping("member/signup")
 	String signup() {
 		return "member/signup";
-		//src/main/webapp/WEB-INF/view/test.jsp�뜝�룞�삕 �뜝�룞�삕�뜝�룞�삕�뜝�룞�삕
+		//src/main/webapp/WEB-INF/view/test.jsp占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲
 	}
 	@RequestMapping("member/myinfo")
 	String myinfo(Model model,MemberDto dto) {
@@ -41,14 +41,14 @@ public class MemberController {
 		MemberDto resultDto = memberService.getInfo(dto);
 		model.addAttribute("memberDto", resultDto);
 		return "member/myinfo";
-		//src/main/webapp/WEB-INF/view/test.jsp�뜝�룞�삕 �뜝�룞�삕�뜝�룞�삕�뜝�룞�삕
+		//src/main/webapp/WEB-INF/view/test.jsp占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲
 	}
 	
-	//�뜝�뙇�눦�삕 �뜝�뙃琉꾩삕 �뜝�떙�뼲�삕李�
+	//占쎈쐻占쎈솂占쎈닰占쎌굲 占쎈쐻占쎈셾筌뚭쑴�굲 占쎈쐻占쎈뼑占쎈섣占쎌굲筌∽옙
 	@RequestMapping("/member/jusoPopup")
 	String jusoPopup() {
 		return "member/jusoPopup";
-		//src/main/webapp/WEB-INF/view/test.jsp�뜝�룞�삕 �뜝�룞�삕�뜝�룞�삕�뜝�룞�삕
+		//src/main/webapp/WEB-INF/view/test.jsp占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲
 	}
 
 	
@@ -85,13 +85,13 @@ public class MemberController {
 		System.out.println("리술트 : " + resultDto.getUser_images()+","+resultDto.getNick_name());
 		System.out.println("디티오 : " + dto.getUser_images());
 		if(dto.getUser_images().equals(resultDto.getUser_images())) {
-			System.out.println("디티오 : " +dto.getUser_images()+","+dto.getNick_name());
+			System.out.println("�뵒�떚�삤 : " +dto.getUser_images()+","+dto.getNick_name());
 			
 			memberService.update(dto);
 			
-			System.out.println("_________________________________________이미지 변경 사항 없음");
+			System.out.println("_________________________________________이미지 변경사항 없음");
 		}else {
-			System.out.println("______________________________________이미지 변경 사항 있음");
+			System.out.println("______________________________________이미지 변경사항 있음");
 			
 		List<MultipartFile> multiList = new ArrayList<MultipartFile>();
 		multiList.add(multi.getFile("upload"));
@@ -120,7 +120,7 @@ public class MemberController {
 	}
 	
 
-	//�뜝�룞�삕�뜝�떛�벝�삕 �뜝�뙥釉앹삕�솗�뜝�룞�삕
+	//占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈뼓占쎈쿈占쎌굲 占쎈쐻占쎈솯�뇡�빘�굲占쎌넇占쎈쐻占쎈짗占쎌굲
 	@RequestMapping("/member/isDuplicate")
 	@ResponseBody 
 
@@ -162,7 +162,7 @@ public class MemberController {
 			if(resultDto.getPassword().equals(dto.getPassword()))
 			{
 
-				map.put("flag", "1"); //�뜝�떥洹몄슱�삕 �뜝�룞�삕�뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕�뜝�떎�슱�삕 �뜝�룞�삕�뜝�룞�삕�뜝�룞�삕 �뜝�룞�삕�뜝�룞�삕�뜝�떬�뙋�삕 
+				map.put("flag", "1"); //占쎈쐻占쎈뼢域밸챷�뒻占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈뼄占쎌뒻占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈뼩占쎈솇占쎌굲 
 				session.setAttribute("userid", resultDto.getUser_id());
 				session.setAttribute("username", resultDto.getName());
 				session.setAttribute("userseq", resultDto.getUser_seq());
