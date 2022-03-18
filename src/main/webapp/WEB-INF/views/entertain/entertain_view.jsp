@@ -15,7 +15,7 @@
 </head>
 <body class="body">
 	<%
-	String key = StringUtil.nullToValue(request.getParameter("key"), "7");
+	String key = StringUtil.nullToValue(request.getParameter("key"), "10");
 	String pg = StringUtil.nullToValue(request.getParameter("pg"), "0");
 	int commentTotalCnt = (Integer)request.getAttribute("commentTotalCnt");
 	EnterDto dto = (EnterDto)request.getAttribute("enterDto");
@@ -27,8 +27,8 @@
 	
 	<!-- details -->
 	<section class="section details">
-<form name="myform">
-	<input type="hidden" name="board_seq"      value="<%=dto.getBoard_seq()%>" >
+
+	
 		<!-- details background -->
 		<div class="details__bg" data-bg="${commonURL}/resources/img/home/home__bg.jpg"></div>
 		<!-- end details background -->
@@ -48,7 +48,7 @@
 							<!-- card cover -->
 							<div class="col-12 col-sm-4 col-md-4 col-lg-3 col-xl-5">
 								<div class="card__cover">
-									<img src="${commonURL}/resources/enter_img/<%=dto.getEnter_images() %>" alt="">
+									<img src="../upload/<%=dto.getEnter_images() %>" style="height: 230px;object-fit: cover;">
 								</div>
 							</div>
 							<!-- end card cover -->
@@ -84,7 +84,7 @@
 													<a href="#">Drama</a>
 													<%}%>
 										</li>
-										<li><span>출시년:</span> <%=dto.getEnter_producer() %></li>
+										<li><span>출시년:</span> <%=dto.getEnter_productionyear() %></li>
 										<li><span>작가:</span> <%=dto.getEnter_producer() %></li>
 									</ul>
 
@@ -138,7 +138,7 @@
 				</div>
 			</div>
 		</div>
-		</form>
+		
 		<!-- end details content -->
 		
 		<!-- content -->
@@ -183,9 +183,9 @@
 									<div class="reviews">
 						<form name="commentForm" method="get">
 							<input type="hidden" name="pg"  id="pg" value="<%=pg%>"/>
-							
 							<input type="hidden" id="board_seq" name="board_seq" value="<%=dto.getBoard_seq()%>">
 							<input type="hidden" id="category_code" name="category_code" value="<%=dto.getCategory_code()%>">
+							<input type="hidden" id="review_seq" name="review_seq" value="">
 							<ul class="reviews__list">
 										
 							<% for(CommentDto Cdto : list){ %>
@@ -203,7 +203,7 @@
 												if(Cdto.getUser_seq().equals(userseq)){
 												%>
 												<div align="right">
-												<button style="width:40px; height: 40px; "  type="button" class="form__btn" onclick="goCommentWrite()">삭제</button>
+												<button style="width:40px; height: 40px; "  type="button" class="form__btn" onclick="commentDelete(<%=Cdto.getReview_seq()%>)">삭제</button>
 												</div>
 											<%} %>
 											</li>
@@ -233,7 +233,7 @@
 												<div class="form__slider-value" id="form__slider-value" ></div>
 											</div>
 											
-											<button type="button" class="form__btn" onclick="goCommentWrite()">Send</button>
+											<button type="button" class="form__btn" onclick="goCommentWrite()">등록</button>
 											
 										</form>
 									</div>
@@ -259,7 +259,7 @@
 function goCommentWrite()
 {
 	var star_point = document.getElementById('form__slider-value').value;
-	frm2 = document.myform2;
+	frm2 = document.myform;
 	frm2.star_point.value=star_point;
 	
 	var userid='<%=userid%>';
@@ -269,7 +269,7 @@ function goCommentWrite()
 		location.href="${commonURL}/member/signin";
 	}
 	
-	var queryString = $("form[name=myform2]").serialize();
+	var queryString = $("form[name=myform]").serialize();
    $.ajax({
 	   url:"${commonURL}/comment/write",
       data:queryString,

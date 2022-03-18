@@ -114,7 +114,7 @@
 						<div class="card">
 							<div class="card__cover">
 							
-								<img src="upload/<%=dto.getAni_images() %>" style="height: 230px;object-fit: cover;">
+								<img src="../upload/<%=dto.getAni_images() %>" style="height: 230px;object-fit: cover;">
 								<a href="#" class="card__play" onclick="goView('<%=dto.getBoard_seq()%>')"></a>
 							
 								

@@ -100,7 +100,7 @@ String adminid= StringUtil.nullToValue(session.getAttribute("id"), "");
 										<ul style="text-align:center;">
 										<li class="dropdown header__nav-item">
 											<a style = "width : auto; height: auto;"class="dropdown-toggle header__nav-link header__nav-link--more" href="#" role="button" id="dropdownMenuMore" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-											<img class="profile" alt="" src="${commonURL }/resources/user_img/<%=userimage%>" style="margin-right: 20px; display: inline;"/>
+											<img class="profile" alt="" src="../upload/<%=userimage%>" style="margin-right: 20px; display: inline;"/>
 											<strong style="font-size: 17px"><%=nickname %></strong> 님 반갑습니다
 											</a>
 

@@ -113,7 +113,7 @@
 						<div class="card">
 							<div class="card__cover">
 							
-								<img src="${commonURL}/resources/webtoon_img/<%=dto.getToon_images() %>" style="height: 230px;object-fit: cover;">
+								<img src="../upload/<%=dto.getToon_images() %>" style="height: 230px;object-fit: cover;">
 								<a href="#" class="card__play" onclick="goView('<%=dto.getBoard_seq()%>')"></a>
 							
 								

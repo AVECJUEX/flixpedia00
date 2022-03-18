@@ -10,7 +10,7 @@ public class DramaDto extends BaseDto {
 	private String drama_content="";
 	private String drama_images="";
 	private String category_code="";
-	private String drama_author="";
+	private String drama_producer="";
 	private String drama_hit="";
 	private String wdate="";
 	private String drama_productionyear="";
@@ -54,11 +54,12 @@ public class DramaDto extends BaseDto {
 	public void setCategory_code(String category_code) {
 		this.category_code = category_code;
 	}
-	public String getDrama_author() {
-		return drama_author;
+	
+	public String getDrama_producer() {
+		return drama_producer;
 	}
-	public void setDrama_author(String drama_author) {
-		this.drama_author = drama_author;
+	public void setDrama_producer(String drama_producer) {
+		this.drama_producer = drama_producer;
 	}
 	public String getDrama_hit() {
 		return drama_hit;
