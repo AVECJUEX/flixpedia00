@@ -46,7 +46,7 @@
 							<!-- card cover -->
 							<div class="col-12 col-sm-4 col-md-4 col-lg-3 col-xl-5">
 								<div class="card__cover">
-									<img src="${commonURL}/resources/drama_img/<%=dto.getDrama_images() %>" alt="">
+									<img src="../upload/<%=dto.getDrama_images() %>" alt="">
 								</div>
 							</div>
 							<!-- end card cover -->
@@ -81,8 +81,8 @@
 													<a href="#">Drama</a>
 													<%}%>
 										</li>
-										<li><span>출시연도:</span> 출시년</li>
-										<li><span>연출/각본:</span> <%=dto.getDrama_author() %></li>
+										<li><span>출시연도:</span><%=dto.getDrama_productionyear() %></li>
+										<li><span>연출/각본:</span> <%=dto.getDrama_producer()%></li>
 									</ul>
 
 									<div class="card__description card__description--details">
@@ -99,7 +99,7 @@
 
 				<!-- player -->
 				<div class="col-12 col-xl-6">
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/V_QS0cLTBOg"
+					<iframe width="560" height="315" src="<%=dto.getDrama_url() %>"
 					title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
 				<!-- end player -->

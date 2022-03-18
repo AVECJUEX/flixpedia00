@@ -46,7 +46,7 @@
 							<!-- card cover -->
 							<div class="col-12 col-sm-4 col-md-4 col-lg-3 col-xl-5">
 								<div class="card__cover">
-									<img src="${commonURL}/resources/webtoon_img/<%=dto.getToon_images() %>" alt="">
+									<img src="../upload/<%=dto.getToon_images() %>" alt="">
 								</div>
 							</div>
 							<!-- end card cover -->

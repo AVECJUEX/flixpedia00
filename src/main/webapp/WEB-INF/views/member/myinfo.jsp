@@ -31,7 +31,7 @@ request.setAttribute("commonURL", request.getContextPath());
 					
 
 					<div style="width: 130px;height: 130px; border-radius: 50%; overflow: hidden; margin-bottom: 50px; "	>
-					<img class="thumb" src="${commonURL }/resources/user_img/<%=userimage %>" 
+					<img class="thumb" src="../upload/<%=userimage %>" 
 					style="width: 130px; height: 130px; object-fit: cover; " />
 					</div>
 					<input type="hidden" id="user_images" name="user_images" value="<%=userimage %>">

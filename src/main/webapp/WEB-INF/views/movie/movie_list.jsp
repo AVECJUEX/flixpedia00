@@ -111,7 +111,7 @@
 						<div class="card">
 							<div class="card__cover">
 							
-								<img src="${commonURL}/resources/movie_img/<%=dto.getMovie_images() %>" style="height: 230px;object-fit: cover;">
+								<img src="../upload/<%=dto.getMovie_images() %>" style="height: 230px;object-fit: cover;">
 								<a href="#" class="card__play" onclick="goView('<%=dto.getBoard_seq()%>')">
 									
 								</a>
