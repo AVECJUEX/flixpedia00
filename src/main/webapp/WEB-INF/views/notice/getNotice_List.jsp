@@ -84,12 +84,13 @@
 						</div>
 					
 					</div>
-									<div class="card__description">
-						
-									<button class="sign__btn" type="button" 
-							style="width:100px; height: 30px; margin:2px; float: right;"  onclick="location.href='go_insertNotice.do'">글 쓰기</button>
+						<%if(adminid.equals("")){%>
+						<% }else{%>
+							<div class="card__description">
+								<button class="sign__btn" type="button" 
+								style="width:100px; height: 30px; margin:2px; float: right;"  onclick="location.href='go_insertNotice.do'">글 쓰기</button>
 							</div>
-				
+						<%} %>
 			
 		</div>
 		<!--========================================================= end accordion ==============================================================-->
