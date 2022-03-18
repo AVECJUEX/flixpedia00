@@ -12,7 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>FLIXMEDIA-ani write</title>
+    <title>FLIXMEDIA-애니메이션 게시물 등록</title>
 
     <!-- Custom fonts for this template-->
     <link href="<%=request.getContextPath()%>/resources/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

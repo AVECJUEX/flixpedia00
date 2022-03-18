@@ -110,7 +110,7 @@
 $(document).on('click', '#qnaWrite', function(e){
 
     e.preventDefault();
-    var url = "${commonURL}//go_insertQ_A.do";
+    var url = "${commonURL}/go_insertQ_A.do";
 
     location.href = url;
     console.log(url);
