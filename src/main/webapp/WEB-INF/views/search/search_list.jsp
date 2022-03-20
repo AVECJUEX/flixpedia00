@@ -119,26 +119,10 @@
 					<div class="col-6 col-sm-4 col-lg-3 col-xl-2">
 						<div class="card">
 							<div class="card__cover">
-								<%if(tempDto.getCategory_code().equals("00")){ %>
-								<img src="${commonURL}/resources/movie_img/<%=tempDto.getImages() %>" style="height: 230px;object-fit: cover;">
-								<a href="#" class="card__play" onclick="goView('<%=tempDto.getCategory_code()%>', '<%=tempDto.getBoard_seq()%>')"></a>
-									<%} %>
-								<%if(tempDto.getCategory_code().equals("01")){ %>
-								<img src="${commonURL}/resources/drama_img/<%=tempDto.getImages() %>" style="height: 230px;object-fit: cover;">
-								<a href="#" class="card__play" onclick="goView('<%=tempDto.getCategory_code()%>', '<%=tempDto.getBoard_seq()%>')"></a>
-									<%} %>
-								<%if(tempDto.getCategory_code().equals("02")){ %>
-								<img src="${commonURL}/resources/enter_img/<%=tempDto.getImages() %>" style="height: 230px;object-fit: cover;">
-								<a href="#" class="card__play" onclick="goView('<%=tempDto.getCategory_code()%>', '<%=tempDto.getBoard_seq()%>')"></a>
-									<%} %>
-								<%if(tempDto.getCategory_code().equals("03")){ %>
-								<img src="${commonURL}/resources/animation_img/<%=tempDto.getImages() %>" style="height: 230px;object-fit: cover;">
-								<a href="#" class="card__play" onclick="goView('<%=tempDto.getCategory_code()%>', '<%=tempDto.getBoard_seq()%>')"></a>
-									<%} %>
-								<%if(tempDto.getCategory_code().equals("04")){ %>
-								<img src="${commonURL}/resources/webtoon_img/<%=tempDto.getImages() %>" style="height: 230px;object-fit: cover;">
-								<a href="#" class="card__play" onclick="goView('<%=tempDto.getCategory_code()%>', '<%=tempDto.getBoard_seq()%>')"></a>
-									<%} %>
+								<img src="../upload/<%=tempDto.getImages() %>" style="height: 230px;object-fit: cover;">
+								<a href="#" class="card__play" onclick="goView('<%=tempDto.getCategory_code()%>', '<%=tempDto.getBoard_seq()%>')">
+									
+								</a>
 								
 						
 								
