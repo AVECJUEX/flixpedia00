@@ -20,7 +20,7 @@
 	HttpSession session1 = request.getSession();
 
 	String id = (String) session1.getAttribute("id");
-	String user_id = (String) session1.getAttribute("userid");
+	String user_id = (String) session1.getAttribute("adminuserid");
 	NoticeDTO dto = (NoticeDTO)request.getAttribute("notice");
 	dto = dto == null ? new NoticeDTO():dto;
 
@@ -42,11 +42,11 @@
                      </a>
 	
 					 <div class="sign__group" style="width: 100%">
-                        <input class="sign__qna" placeholder="제목을 입력하세요"  name="q_a_title" type="text" value="${ notice_title }" />
+                        <input class="sign__qna" placeholder="제목을 입력하세요"  name="notice_title" type="text" value="${ notice_title }" />
                      </div>
                      <br>
                      <div class="sign__group" style="width: 100%">
-                        <textarea class="sign__qna" placeholder="내용을 입력하세요"  name="q_a_contents" style="height: 300px; padding: 10px;">${ notice_content }</textarea>
+                        <textarea class="sign__qna" placeholder="내용을 입력하세요"  name="notice_content" style="height: 300px; padding: 10px;">${ notice_content }</textarea>
                      </div>
                      <br>
    				     <div>
