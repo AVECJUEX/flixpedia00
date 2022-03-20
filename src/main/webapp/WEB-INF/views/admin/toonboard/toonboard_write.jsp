@@ -269,6 +269,8 @@
 									<option value="07">애니메이션</option>
 									<option value="08">액션/모험</option>
 									<option value="09">미스터리</option>
+									<option value="10">사극</option>
+									<option value="11">스포츠</option>
 								</select>
 				                </div>
 				            </div>

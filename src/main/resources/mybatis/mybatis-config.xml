@@ -7,8 +7,6 @@
 너무 길어서 짧은 별명을 만들어서 접근하기 위해
 기술한다  -->
 	<typeAliases>
-    	
-
     	<typeAlias alias="MemberDto" 	type="com.semi.flix.member.MemberDto"/>	
     	<typeAlias alias="WebtoonDto" 	type="com.semi.flix.webtoon.WebtoonDto"/>	
     	<typeAlias alias="CommentDto" 	type="com.semi.flix.comment.CommentDto"/>	
@@ -37,7 +35,6 @@
 	</typeAliases>
 
 	<mappers>
-	  
 		<mapper resource=	"/com/semi/flix/mapper/Member.xml"/>
 		<mapper resource=	"/com/semi/flix/mapper/Webtoon.xml"/>
 		<mapper resource=	"/com/semi/flix/mapper/Comment.xml"/>
@@ -62,7 +59,6 @@
 		<mapper resource=	"/com/semi/flix/admin/mapper/Mail.xml"/>
 		<mapper resource=	"/com/semi/flix/admin/mapper/AdminQ_A.xml"/>
 		<mapper resource=	"/com/semi/flix/admin/mapper/Comment.xml"/>
-	
 	</mappers>
 	
 </configuration>
