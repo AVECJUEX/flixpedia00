@@ -4,7 +4,7 @@
 <%
 request.setAttribute("commonURL", request.getContextPath());
 String id = AdminStringUtil.nullToValue(session.getAttribute("id"), "");
-String userid = AdminStringUtil.nullToValue(session.getAttribute("userid"), "");
+String userid = AdminStringUtil.nullToValue(session.getAttribute("adminuserid"), "");
 String username = AdminStringUtil.nullToValue(session.getAttribute("username"), "");
 String email = AdminStringUtil.nullToValue(session.getAttribute("email"), "");
 String phone = AdminStringUtil.nullToValue(session.getAttribute("phone"), "");

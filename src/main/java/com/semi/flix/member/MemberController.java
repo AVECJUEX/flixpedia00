@@ -16,8 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import com.semi.flix.animation.AnimationDto;
-import com.semi.flix.comment.CommentDto;
+import com.semi.flix.Visit.VisitService;
 import com.semi.flix.common.FileUploadUtil;
 
 
@@ -27,6 +26,8 @@ public class MemberController {
 	@Resource(name="memberService")
 	MemberService memberService;
 	
+	@Resource(name="visitService")
+	VisitService visitService;
 
 	//占쎌돳占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲 占쎈쐻占쎈뼓占쎈쿈占쎌굲
 	@RequestMapping("member/signup")
@@ -168,8 +169,14 @@ public class MemberController {
 				session.setAttribute("userseq", resultDto.getUser_seq());
 				session.setAttribute("nickname", resultDto.getNick_name());
 				session.setAttribute("userimage", resultDto.getUser_images());
-        
-				
+				System.out.println(visitService.getTotal(null));
+				if(visitService.getTotal(null)==0)
+					visitService.insert(null);
+				//만약 방문자가 wdate에 널이라면 값을 넣어주고
+				//방문자 카운터 - 로그인 했을때 
+				//널이 아니라면 wdate+1로 업데이트 해준다.
+				else
+					visitService.update(null);
 
 			}
 			else

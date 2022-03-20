@@ -43,6 +43,7 @@ public class HomeController {
 	@Resource(name="enterService")
 	EnterService enterService;
 	
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		
@@ -95,12 +96,6 @@ public class HomeController {
 		model.addAttribute("enterList", enterList);
 		
 		return "home";
-	}
-	
-	@RequestMapping(value = "/admin/adminindex", method = RequestMethod.GET)
-	public String admin(Locale locale, Model model) {
-
-		return "admin/adminindex";
 	}
   
 }

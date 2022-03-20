@@ -5,7 +5,7 @@
  
 <mapper namespace="Visit">
 	<select id="Visit_getTotal" parameterType="VisitDto" resultType="Integer">
-		select count(*) from tb_visit_count where wdate = date_format(now(), '%Y-%m-%d');
+		select sum(visit_count) from tb_visit_count where wdate = date_format(now(), '%Y-%m-%d');
 	</select>
 	
 	<select id="Visit_insert" parameterType="VisitDto" >

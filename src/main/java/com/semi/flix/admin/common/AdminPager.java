@@ -79,7 +79,7 @@ public class AdminPager {
 			sb.append((cpage > 0) ? makeLink(0, beginLabel) : 
 				"<li class=\"page-item\"><a class=\"page-link\"  href='#'>"+beginLabel+"</a></li>\r\n");
 			sb.append(hasPreviousPage ? makeLink(pageGroupStart - 1, prevLabel) : 
-				"<li class=\"page-item\"><a class=\"page-link\"  href='#'>"+prevLabel+"</a></li>\r\n");
+				"<li class=\"page-item\"><a class=\"page-link\"  href=\"javascript:goPage('"+(cpage-1)+"')\">"+prevLabel+"</a></li>\r\n");
 			
 			for (int i = pageGroupStart; i < pageGroupEnd; i++) {
 				if (i == cpage) {//현재 페이지
@@ -92,7 +92,7 @@ public class AdminPager {
 			
 
 			sb.append(hasNextPage ? makeLink(pageGroupEnd, nextLabel) : 
-				"<li class=\"page-item\"> <a class=\"page-link\" href='#'>"+nextLabel+"</a></li>\r\n");
+				"<li class=\"page-item\"> <a class=\"page-link\" href=\"javascript:goPage('"+(cpage+1)+"')\">"+nextLabel+"</a></li>\r\n");
 			sb.append((cpage < pageTotal) ? makeLink(pageTotal, endLabel) : 
 				"<li class=\"page-item\"><a class=\"page-link\"  href='#'>"+endLabel+"</a></li>\r\n");
 		

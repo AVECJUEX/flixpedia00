@@ -30,7 +30,7 @@ public class AdminLoginInterceptor extends HandlerInterceptorAdapter{
 		//로그인이 안되어 있으면 false를 반환해서 가던길을 막고, 로그인 페이지로 이동한다.
 		//만들어만 놓고 servlet-context.xml에서 이 파일을 적용하도록 설정을 해줘야한다.
 		
-		Object userid = session.getAttribute("userid");
+		Object userid = session.getAttribute("adminuserid");
 		if(userid!=null)	//이미 로그인이 된 상태
 			return true;
 		

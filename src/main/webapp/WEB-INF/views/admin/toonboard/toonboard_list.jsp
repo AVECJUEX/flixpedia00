@@ -286,7 +286,9 @@
                                 <%} %>
                                 </tbody>
                               </table>
-                              
+                              <div class="mt-3 text-right">
+				                <button class="btn btn-primary profile-button" type="button" style="margitn-top:-4rem;" onclick="goWrite()">등록</button>
+				              </div>
                               <div class="container mt-3" style="text-align:right;"> 
                                   <%=AdminPager.makeTag(request, 10, totalCnt)%>
                               </div>
@@ -399,5 +401,10 @@
 		frm.action = "${pageContext.request.contextPath}/admin/toonboard/view";
 		frm.submit();
 	}
-
+	function goWrite()
+	{
+	   var frm = document.myform;
+	   frm.action="<%=request.getContextPath()%>/admin/toonboard/write";
+	   frm.submit();
+	}
 </script>

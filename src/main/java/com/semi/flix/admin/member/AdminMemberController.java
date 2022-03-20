@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.tomcat.util.buf.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
@@ -20,14 +21,6 @@ import com.semi.flix.Visit.VisitService;
 import com.semi.flix.admin.adminQ_A.AdminQ_ADto;
 import com.semi.flix.admin.adminQ_A.AdminQ_AService;
 import com.semi.flix.admin.mail.MailDto;
-
-import javax.mail.internet.MimeMessage;
-import org.springframework.mail.javamail.JavaMailSenderImpl;
-import org.springframework.mail.javamail.MimeMessageHelper;
-import org.springframework.mail.javamail.MimeMessagePreparator;
-
-import org.springframework.core.io.FileSystemResource;
-import java.io.File;
 @Controller
 public class AdminMemberController {
 	
@@ -54,7 +47,7 @@ public class AdminMemberController {
 	{
 		HttpSession session = request.getSession();
 		
-		String userid = (String)session.getAttribute("userid");
+		String userid = (String)session.getAttribute("adminuserid");
 		if(userid==null)
 			return "redirect:/admin/adminindex";
 		
@@ -99,9 +92,6 @@ public class AdminMemberController {
 	@ResponseBody
 	public HashMap<String, String> adminmember_login_proc(AdminMemberDto dto, HttpServletRequest request)
 	{
-		//媛� �럹�씠吏�蹂꾨줈 �젙蹂� 怨듭쑀媛� �븞�맂�떎.
-		//�삁�쇅(荑좏궎 �삉�뒗 �꽭�뀡 - �꽭�뀡�쓣 留롮씠 �궗�슜�븳�떎.)
-		//荑좏궎 - 蹂몄씤 而댄벂�꽣�뿉 / �꽭�뀡 - �꽌踰꾩뿉(蹂댁븞�쓣 媛뺥솕�떆�궎怨좎옄 �븷�븣)
 		HttpSession session = request.getSession();
 		
 		AdminMemberDto resultDto = adminmemberService.getInfo(dto);
@@ -119,7 +109,7 @@ public class AdminMemberController {
 			{
 				map.put("flag", "1");	//濡쒓렇�씤 �꽦怨듭떆 �꽭�뀡�뿉 �젙蹂대�� ���옣�븳�떎.
 				session.setAttribute("id", resultDto.getId());
-				session.setAttribute("userid", resultDto.getUserid());
+				session.setAttribute("adminuserid", resultDto.getUserid());
 				session.setAttribute("username", resultDto.getUsername());///////
 				session.setAttribute("email", resultDto.getEmail());
 				session.setAttribute("phone", resultDto.getPhone());
@@ -137,7 +127,7 @@ public class AdminMemberController {
 	public String adminmember_logout(HttpServletRequest request)
 	{
 		HttpSession session = request.getSession();
-		session.invalidate();	//�꽭�뀡�쓽 �뜲�씠�꽣 �궘�젣
+		session.invalidate();
 		
 		return "redirect:admin/adminindex";
 	}
@@ -169,7 +159,7 @@ public class AdminMemberController {
 			map.put("result", "fail");
 		else {
 			map.put("result", findDto.getUserid());
-			map.put("userid", findDto.getUserid());
+			map.put("adminuserid", findDto.getUserid());
 			map.put("username", findDto.getUsername());
 		}
 		return map;
@@ -186,7 +176,7 @@ public class AdminMemberController {
 		else
 		{
 			map.put("result", findDto.getPassword());
-			map.put("userid", findDto.getUserid());
+			map.put("adminuserid", findDto.getUserid());
 			map.put("username", findDto.getUsername());
 		}
 		return map;
@@ -203,15 +193,24 @@ public class AdminMemberController {
 	}
 	
 	@RequestMapping(value="/admin/adminindex")
-	   public String adminmember_index()
+	   public String adminmember_index(HttpServletRequest request)
 	   {
-	      return "/admin/adminindex";
+		HttpSession session = request.getSession();
+		String userid = (String)session.getAttribute("adminuserid");
+		System.out.println("----------------------->" + userid);
+		
+		if(userid==null) {
+			return "/admin/adminindex";
+		} else {
+			return "redirect:/admin/adminhome";
+		}
 	   }
 	
 	@RequestMapping(value="/admin/adminhome", method=RequestMethod.GET)
 	   public String adminmember_home(Model model, AdminMemberDto dto, VisitDto dto2, AdminQ_ADto dto3)
 	   {
 		  model.addAttribute("totalCnt", visitService.getTotal(dto2));
+		  System.out.println("-----------------1111----------"+visitService.getTotal(dto2));
 		  model.addAttribute("cnt", adminmemberService.cnt(dto));
 		  model.addAttribute("user", adminmemberService.user(dto));
 		  model.addAttribute("category", adminmemberService.category(dto));
