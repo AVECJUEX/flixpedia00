@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="com.woori.myhome">
+	<logger name="com.semi.flix">
 		<level value="info" />
 	</logger>
 	

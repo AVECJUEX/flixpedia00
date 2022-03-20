@@ -73,7 +73,7 @@
 			order by board_seq desc
 		) A
 		   
-		limit 0, 10   
+		limit #{start}, #{pageSize}   
 	</select>
 	
 	<select id="Drama_getTotal" parameterType="DramaDto" resultType="Integer">
