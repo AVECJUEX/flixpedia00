@@ -100,24 +100,24 @@
 				<!-- end footer list -->
 				
 				<!-- footer list -->
-				<div class="col-12 col-sm-4 col-md-3">
-					<h6 class="footer__title">Contact</h6>
-					<ul class="footer__list">
-						<li><a href="tel:+18002345678">+1 (800) 234-5678</a></li>
-						<li><a href="mailto:support@moviego.com">support@flixgo.com</a></li>
-					</ul>
-					<ul class="footer__social">
-						<li class="facebook"><a href="#"><i class="icon ion-logo-facebook"></i></a></li>
-						<li class="instagram"><a href="#"><i class="icon ion-logo-instagram"></i></a></li>
-						<li class="twitter"><a href="#"><i class="icon ion-logo-twitter"></i></a></li>
-						<li class="vk"><a href="#"><i class="icon ion-logo-vk"></i></a></li>
-					</ul>
-				</div>
-				<!-- end footer list -->
+            <div class="col-12 col-sm-4 col-md-3">
+               <h6 class="footer__title">이정진</h6>
+               <ul class="footer__list">
+                  <li><a href="tel:+18002345678">+1 (800) 234-5678</a></li>
+                  <li><a href="mailto:support@moviego.com">lxxragos@kakao.com</a></li>
+               </ul>
+               <ul class="footer__social">
+                  <li class="facebook"><a href="#"><i class="icon ion-logo-facebook"></i></a></li>
+                  <li class="instagram"><a href="https://www.instagram.com/zung_zin/"><i class="icon ion-logo-instagram"></i></a></li>
+                  <li class="twitter"><a href="#"><i class="icon ion-logo-twitter"></i></a></li>
+                  <li class="vk"><a href="#"><i class="icon ion-logo-vk"></i></a></li>
+               </ul>
+            </div>
+            <!-- end footer list -->
 				
 				<!-- footer list -->
 				<div class="col-12 col-sm-4 col-md-3">
-					<h6 class="footer__title">Contact</h6>
+					<h6 class="footer__title">이혁주</h6>
 					<ul class="footer__list">
 						<li><a href="tel:+18002345678">+1 (800) 234-5678</a></li>
 						<li><a href="mailto:support@moviego.com">support@flixgo.com</a></li>
@@ -139,7 +139,7 @@
 				
 				<!-- footer list -->
 				<div class="col-12 col-sm-4 col-md-3">
-					<h6 class="footer__title">Contact</h6>
+					<h6 class="footer__title">한나라</h6>
 					<ul class="footer__list">
 						<li><a href="tel:+18002345678">+1 (800) 234-5678</a></li>
 						<li><a href="mailto:support@moviego.com">support@flixgo.com</a></li>
@@ -155,7 +155,7 @@
 				
 				<!-- footer list -->
 				<div class="col-12 col-sm-4 col-md-3">
-					<h6 class="footer__title">Contact</h6>
+					<h6 class="footer__title">박한우</h6>
 					<ul class="footer__list">
 						<li><a href="tel:+18002345678">+1 (800) 234-5678</a></li>
 						<li><a href="mailto:support@moviego.com">support@flixgo.com</a></li>
