@@ -11,7 +11,7 @@ request.setAttribute("commonURL", request.getContextPath());
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<%@include file="../include/css.jsp" %>
-	<title>FlixGo – Online Movies, TV Shows & Cinema HTML Template</title>
+	<title>FlixPedia – Online Movies, TV Shows & Cinema HTML Template</title>
 </head>
 <body class="body">
 <%@include file="../include/header.jsp" %>
@@ -24,7 +24,7 @@ request.setAttribute("commonURL", request.getContextPath());
 					<a href="index.html" class="sign__logo">
 					
 					
-					<img src="../resources/img/logo.svg" alt=""></a>
+					<img src="${commonURL}/resources/img/logoimg.png" alt=""></a>
 					
 
 					<div style="width: 130px;height: 130px; border-radius: 50%; overflow: hidden; margin-bottom: 50px; "	>

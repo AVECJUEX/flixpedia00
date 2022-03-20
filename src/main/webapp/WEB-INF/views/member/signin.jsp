@@ -10,7 +10,7 @@ request.setAttribute("commonURL", request.getContextPath());
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
 	<%@include file="../include/css.jsp" %>
-	<title>FlixGo – Online Movies, TV Shows & Cinema HTML Template</title>
+	<title>FlixPedia – Online Movies, TV Shows & Cinema HTML Template</title>
 
 </head>
 <body class="body">
@@ -23,7 +23,7 @@ request.setAttribute("commonURL", request.getContextPath());
 						<!-- authorization form -->
 						<form class="sign__form" name="form">
 							<a href="${commonURL}/" class="sign__logo">
-								<img src="<%=request.getContextPath() %>/resources/img/logo.svg" alt="">
+								<img src="${commonURL}/resources/img/logoimg.png" alt="">
 							</a>
 
 							<div class="sign__group">

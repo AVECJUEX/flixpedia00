@@ -10,7 +10,7 @@ public class AnimationDto extends BaseDto {
 	private String ani_content="";
 	private String ani_images="";
 	private String category_code="";
-	private String ani_author="";
+	private String ani_producer="";
 	private String ani_hit="";
 	private String wdate="";
 	private String ani_productionyear="";
@@ -55,11 +55,12 @@ public class AnimationDto extends BaseDto {
 	public void setCategory_code(String category_code) {
 		this.category_code = category_code;
 	}
-	public String getAni_author() {
-		return ani_author;
+	
+	public String getAni_producer() {
+		return ani_producer;
 	}
-	public void setAni_author(String ani_author) {
-		this.ani_author = ani_author;
+	public void setAni_producer(String ani_producer) {
+		this.ani_producer = ani_producer;
 	}
 	public String getAni_hit() {
 		return ani_hit;
