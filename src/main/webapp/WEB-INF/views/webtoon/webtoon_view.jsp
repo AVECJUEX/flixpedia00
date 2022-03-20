@@ -196,7 +196,7 @@
 										<!--댓글 한칸 시작  -->
 											<li class="reviews__item">
 												<div class="reviews__autor">
-													<img class="reviews__avatar" src="${commonURL}/resources/user_img/<%=Cdto.getUser_images() %>" alt=""> 
+													<img class="reviews__avatar" src="../upload/<%=Cdto.getUser_images() %>" alt=""> 
 													<span class="reviews__name">닉네임 : <%=Cdto.getNick_name() %></span>
 													<span class="reviews__time">작성일 : <%=Cdto.getWdate() %></span>
 
