@@ -310,7 +310,7 @@
 			                                 </div>
 			                                 <div class="mt-1 text-center" id="result">
 				                                <button class="btn btn-primary profile-button" type="button" onclick="goWrite()">등록</button>
-							                    <button class="btn btn-primary profile-button" type="button" onclick="goCancle()">취소</button>
+							                    <button class="btn btn-primary profile-button" type="button" onclick="goCancel()">취소</button>
 			                                </div>
 		                                </div>
 	                        	</div>
@@ -360,7 +360,7 @@
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">취소</button>
 
-                    <a class="btn btn-primary" href="${commonURL}/admin/adminindex">로그아웃</a>
+                    <a class="btn btn-primary" href="${commonURL}/admin/adminmember/logout">로그아웃</a>
 
                 </div>
             </div>
@@ -542,6 +542,7 @@ $(()=>{
 	        }
 	    });
 	});
+	
 	function goCancel()
 	{
 		location.href="${commonURL}/admin/adminhome";

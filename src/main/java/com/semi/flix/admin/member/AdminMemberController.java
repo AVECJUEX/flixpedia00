@@ -129,7 +129,7 @@ public class AdminMemberController {
 		HttpSession session = request.getSession();
 		session.invalidate();
 		
-		return "redirect:admin/adminindex";
+		return "redirect:/admin/adminindex";
 	}
 	
 	@RequestMapping(value="/admin/adminmember/findId")

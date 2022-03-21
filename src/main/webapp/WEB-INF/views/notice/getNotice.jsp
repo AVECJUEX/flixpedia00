@@ -13,7 +13,7 @@
 <%
 HttpSession session1 = request.getSession();
 String id = (String) session1.getAttribute("id");
-String userid = (String) session1.getAttribute("userid");
+String userid = (String) session1.getAttribute("adminuserid");
 %>
 </head>
 <body>

@@ -20,7 +20,7 @@
 	HttpSession session1 = request.getSession();
 
 	String id = (String) session1.getAttribute("id");
-	String user_id = (String) session1.getAttribute("userid");
+	String user_id = (String) session1.getAttribute("adminuserid");
 	NoticeDTO dto = (NoticeDTO)request.getAttribute("notice");
 	dto = dto == null ? new NoticeDTO():dto;
 

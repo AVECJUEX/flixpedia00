@@ -319,7 +319,7 @@
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">취소</button>
 
-                    <a class="btn btn-primary" href="${commonURL}/admin/adminindex">로그아웃</a>
+                    <a class="btn btn-primary" href="${commonURL}/admin/adminmember/logout">로그아웃</a>
 
                 </div>
             </div>
