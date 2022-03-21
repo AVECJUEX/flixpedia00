@@ -93,7 +93,7 @@ public class AdminPager {
 
 			sb.append(hasNextPage ? makeLink(pageGroupEnd, nextLabel) : 
 				"<li class=\"page-item\"> <a class=\"page-link\" href=\"javascript:goPage('"+(cpage+1)+"')\">"+nextLabel+"</a></li>\r\n");
-			sb.append((cpage < pageTotal) ? makeLink(pageTotal, endLabel) : 
+			sb.append((cpage < pageTotal) ? makeLink(pageTotal, endLabel) :
 				"<li class=\"page-item\"><a class=\"page-link\"  href='#'>"+endLabel+"</a></li>\r\n");
 		
 			sb.append("</ul>\r\n") ;  		

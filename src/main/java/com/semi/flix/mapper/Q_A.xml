@@ -16,8 +16,8 @@
 
 	<insert id="insertQ_A">
 		<![CDATA[
-		INSERT INTO Q_A(USER_SEQ,Q_A_TITLE, Q_A_CONTENTS)
-		VALUES(#{user_seq},#{q_a_title}, #{q_a_contents})
+		INSERT INTO Q_A(USER_SEQ,Q_A_TITLE, Q_A_CONTENTS, Q_A_WDATE)
+		VALUES(#{user_seq},#{q_a_title}, #{q_a_contents}, now())
 		]]>
 	</insert>
 
