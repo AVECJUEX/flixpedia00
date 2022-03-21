@@ -18,7 +18,7 @@ String username= StringUtil.nullToValue(session.getAttribute("username"), "");
 String userseq= StringUtil.nullToValue(session.getAttribute("userseq"), "");
 String nickname= StringUtil.nullToValue(session.getAttribute("nickname"), "");
 String userimage= StringUtil.nullToValue(session.getAttribute("userimage"), "");
-String adminid= StringUtil.nullToValue(session.getAttribute("id"), "");
+String adminid= StringUtil.nullToValue(session.getAttribute("adminuserid"), "");
 %>
 
 <meta charset="UTF-8"> 

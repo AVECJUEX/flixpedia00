@@ -67,8 +67,7 @@
 											<c:forEach items="${notice_List}" var="notice">
 												<tr>
 													<td>${ notice.notice_seq }</td>
-													<td align="left"><a	href="getNotice.do?notice_seq=${ notice.notice_seq }">
-													 ${ notice.notice_title }</a></td>
+													<td align="left"><a	href="getNotice.do?notice_seq=${ notice.notice_seq }">${ notice.notice_title }</a></td>
 													<td>${notice.notice_content  }</td>
 													<%-- <td><fmt:formatDate value="${ notice.wdate }" pattern="yyyy-MM-dd" /></td> --%>
 													<td>${notice.wdate  }</td>

@@ -4,7 +4,7 @@ import com.semi.flix.common.BaseDto;
 
 public class EnterDto extends BaseDto {
 
-	private int board_seq=0;
+	private String board_seq;
 	private String genre_code="";
 	private String enter_title="";
 	private String enter_content="";
@@ -26,10 +26,13 @@ public class EnterDto extends BaseDto {
 	public void setStar_avg(String star_avg) {
 		this.star_avg = star_avg;
 	}
-	public int getBoard_seq() {
+	
+	
+	
+	public String getBoard_seq() {
 		return board_seq;
 	}
-	public void setBoard_seq(int board_seq) {
+	public void setBoard_seq(String board_seq) {
 		this.board_seq = board_seq;
 	}
 	public String getGenre_code() {
