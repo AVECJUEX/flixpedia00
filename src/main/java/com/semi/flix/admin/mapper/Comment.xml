@@ -5,28 +5,28 @@
  
 <mapper namespace="AdminComment">
 	
-	<insert id="Comment_insert" parameterType="CommentDto">
+	<insert id="Comment_insert" parameterType="AdminCommentDto">
 		insert into q_a_comment
 		(q_a_seq, title, content, wdate)
 		values
 		(#{q_a_seq}, #{title}, #{content}, now())
 	</insert>
 	
-	<select id="Comment_getList" parameterType="CommentDto" resultType="CommentDto">
+	<select id="Comment_getList" parameterType="AdminCommentDto" resultType="AdminCommentDto">
 		select 
 			seq, q_a_seq, title, content, wdate
 		from q_a_comment
 		where q_a_seq=#{q_a_seq}
 	</select>
 	
-	<select id="Comment_getView" parameterType="CommentDto" resultType="CommentDto">
+	<select id="Comment_getView" parameterType="AdminCommentDto" resultType="AdminCommentDto">
 		select 
 			seq, q_a_seq, title, content, wdate
 		from q_a_comment
 		where seq=#{seq}
 	</select>
 	
-	<delete id="Comment_delete" parameterType="CommentDto">
+	<delete id="Comment_delete" parameterType="AdminCommentDto">
 		delete from q_a_comment where seq=#{seq}
 	</delete>
 	
