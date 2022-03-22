@@ -14,13 +14,13 @@
 </head>
 <body class="body">
 	<%
-	String key = StringUtil.nullToValue(request.getParameter("key"), "10");
-	String keyword = StringUtil.nullToValue(request.getParameter("keyword"), "");
+	String keyword = StringUtil.nullToValue(request.getParameter("keyword"),"");
 	String pg = StringUtil.nullToValue(request.getParameter("pg"), "0");
 	int totalCnt = (Integer)request.getAttribute("totalCnt");
 	
 	List<WebtoonDto> list =(List<WebtoonDto>)request.getAttribute("webtoonList");
 	%>
+	
 	<%@include file="../include/header.jsp" %>
 
 		
@@ -33,7 +33,7 @@
 				<div class="col-12">
 					<div class="section__wrap">
 						<!-- section title -->
-						<h2 class="section__title">드라마(${totalCnt}건)</h2>
+						<h2 class="section__title">웹툰(${totalCnt}건)</h2>
 						<!-- end section title -->
 
 						<!-- breadcrumb -->
@@ -45,129 +45,133 @@
 		</div>
 	</section>
 	<!-- end page title -->
-<form name="myform" method="get">
-	<input type="hidden" name="pg"  id="pg" value="<%=pg%>"/>
-	<input type="hidden" name="key" id="key" value="<%=key%>"/>
-	<input type="hidden" name="board_seq"  id="board_seq" value=""/>
-	<input type="hidden" name="category_code"  id="category_code" value=""/>
-	<input type="hidden" name="user_seq"  id="user_seq" value="<%=userseq%>"/>
-		<!-- filter -->
-		<div class="filter">
-			<div class="container">
-				<div class="row">
-					<div class="col-12">
-						<div class="filter__content">
-							<div class="filter__items">
-								<!-- filter item -->
-								<div class="filter__item" id="filter__genre">
-									<span class="filter__item-label">GENRE:</span>
-	
-									<div class="filter__item-btn dropdown-toggle" role="navigation" id="filter-genre" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-										<input type="button" value="선택하세요" id="searchItem">
-										
+	<form name="myform" method="get">
+		<input type="hidden" name="pg"  id="pg" value="<%=pg%>"/>
+		<input type="hidden" name="key" id="key" value="<%=key%>"/>
+		<input type="hidden" name="board_seq"  id="board_seq" value=""/>
+		<input type="hidden" name="category_code"  id="category_code" value=""/>
+		<input type="hidden" name="user_seq"  id="user_seq" value="<%=userseq%>"/>
+			<!-- filter -->
+			<div class="filter">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<div class="filter__content">
+								<div class="filter__items">
+									<!-- filter item -->
+									<div class="filter__item" id="filter__genre">
+										<span class="filter__item-label">GENRE:</span>
+		
+										<div class="filter__item-btn dropdown-toggle" role="navigation" id="filter-genre" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											<input type="button" value="" id="searchItem">
+											
+										</div>
+		
+										<ul class="filter__item-menu dropdown-menu scrollbar-dropdown" aria-labelledby="filter-genre">
+											
+											<li><a onclick="changeSearch('12')">전체</a></li>
+											<li><a onclick="changeSearch('0')">Action</a></li>
+											<li><a onclick="changeSearch('1')">Romance</a></li>
+											<li><a onclick="changeSearch('2')">Comedy</a></li>
+											<li><a onclick="changeSearch('3')">Thriller/Crime</a></li>
+											<li><a onclick="changeSearch('4')">Horror</a></li>
+											<li><a onclick="changeSearch('5')">Fantasy</a></li>
+											<li><a onclick="changeSearch('6')">Drama</a></li>
+											<li><a onclick="changeSearch('7')">Animation</a></li>
+											<li><a onclick="changeSearch('8')">Action/Adventure</a></li>
+											<li><a onclick="changeSearch('9')">Mystery</a></li>
+											<li><a onclick="changeSearch('10')">History</a></li>
+											<li><a onclick="changeSearch('11')">Sports</a></li>
+														
+										</ul>
 									</div>
-	
-									<ul class="filter__item-menu dropdown-menu scrollbar-dropdown" aria-labelledby="filter-genre">
-										
-										<li><a onclick="changeSearch('10')">전체</a></li>
-										<li><a onclick="changeSearch('0')">Action</a></li>
-										<li><a onclick="changeSearch('1')">Romance</a></li>
-										<li><a onclick="changeSearch('2')">Comedy</a></li>
-										<li><a onclick="changeSearch('3')">Thriller/Crime</a></li>
-										<li><a onclick="changeSearch('4')">Horror</a></li>
-										<li><a onclick="changeSearch('5')">Fantasy</a></li>
-										<li><a onclick="changeSearch('6')">Drama</a></li>
-										<li><a onclick="changeSearch('7')">Animation</a></li>
-										<li><a onclick="changeSearch('8')">Action/Adventure</a></li>
-										<li><a onclick="changeSearch('9')">Mystery</a></li>
-													
-									</ul>
-									<!-- <button class="sign__btn" type="button" onclick="goSearch()" 
-											style="width:100px; height: 30px; margin:2px;">검색</button> -->
-								</div>
-								<!-- end filter item -->
-	
-								<!-- filter item -->
-								
-							</div>
-							
-							<!-- filter btn -->
-							<button class="filter__btn" type="button" onclick="goSearch()">apply filter</button>
-							<!-- end filter btn -->
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- end filter -->
-	
-		<!-- catalog -->
-		<div class="catalog">
-			<div class="container">
-				<div class="row">
-					<!-- card -->
-					
-					
-					<% for(WebtoonDto dto : list){ %>
-					<div class="col-6 col-sm-4 col-lg-3 col-xl-2">
-						<div class="card">
-							<div class="card__cover">
-							
-								<img src="../upload/<%=dto.getToon_images() %>" style="height: 230px;object-fit: cover;">
-								<a href="#" class="card__play" onclick="goView('<%=dto.getBoard_seq()%>')"></a>
-							
-								
-							</div>
-							<div class="card__content">
-							
-								<h3 class="card__title"><a href="#" onclick="goView('<%=dto.getBoard_seq()%>')"><%=dto.getToon_title() %></a></h3>
-								<span class="card__category">
-
-								<%
-								if(dto.getGenre_code().equals("00")){ %>
-									<a href="#">Action</a>
-									<%}else if(dto.getGenre_code().equals("01")){ %>
-									<a href="#">Romantic</a>
-									<%}else if(dto.getGenre_code().equals("02")){ %>
-									<a href="#">Comedy</a>
-									<%}else if(dto.getGenre_code().equals("03")){ %>
-									<a href="#">Thliler/Criminal</a>
-									<%}else if(dto.getGenre_code().equals("04")){ %>
-									<a href="#">Horror</a>
-									<%}else if(dto.getGenre_code().equals("05")){ %>
-									<a href="#">SF/Fantasy</a>
-									<%}else if(dto.getGenre_code().equals("06")){ %>
-									<a href="#">Drama</a>
-									<%}else if(dto.getGenre_code().equals("07")){ %>
-									<a href="#">Animation</a>
-									<%}else if(dto.getGenre_code().equals("08")){ %>
-									<a href="#">Action/Adventure</a>
-									<%}else if(dto.getGenre_code().equals("09")){ %>
-									<a href="#">Mystery</a>
-									<%}%>
+									<!-- end filter item -->
+		
+									<!-- filter item -->
 									
-								</span>
-								<span class="card__rate" id="star_point"><i class="icon ion-ios-star"><%=dto.getStar_avg() %></i></span>
+								</div>
+								
+								<!-- filter btn -->
+								<button class="filter__btn" type="button" onclick="goSearch()">apply filter</button>
+								<!-- end filter btn -->
 							</div>
 						</div>
 					</div>
-					<%} %>
-					<!-- end card -->
-	
-				
-	
-					<!-- paginator -->
-					
-					<div class="col-12">
-						<%=Pager.makeTag(request, 12, totalCnt) %>
-					</div>
-					<!-- end paginator -->
 				</div>
 			</div>
-		</div>
-		<!-- end catalog -->
-</form>
+			<!-- end filter -->
+		
+			<!-- catalog -->
+			<div class="catalog">
+				<div class="container">
+					<div class="row">
+						<!-- card -->
+						
+						
+						<% for(WebtoonDto dto : list){ %>
+						<div class="col-6 col-sm-4 col-lg-3 col-xl-2">
+							<div class="card">
+								<div class="card__cover">
+								
+									<img src="../upload/<%=dto.getToon_images() %>" style="height: 230px;object-fit: cover;">
+									<a href="#" class="card__play" onclick="goView('<%=dto.getBoard_seq()%>')"></a>
+								
+									
+								</div>
+								<div class="card__content">
+								
+									<h3 class="card__title"><a href="#" onclick="goView('<%=dto.getBoard_seq()%>')"><%=dto.getToon_title() %></a></h3>
+									<span class="card__category">
 	
+									<%
+									if(dto.getGenre_code().equals("00")){ %>
+										<a href="#">Action</a>
+										<%}else if(dto.getGenre_code().equals("01")){ %>
+										<a href="#">Romantic</a>
+										<%}else if(dto.getGenre_code().equals("02")){ %>
+										<a href="#">Comedy</a>
+										<%}else if(dto.getGenre_code().equals("03")){ %>
+										<a href="#">Thliler/Criminal</a>
+										<%}else if(dto.getGenre_code().equals("04")){ %>
+										<a href="#">Horror</a>
+										<%}else if(dto.getGenre_code().equals("05")){ %>
+										<a href="#">SF/Fantasy</a>
+										<%}else if(dto.getGenre_code().equals("06")){ %>
+										<a href="#">Drama</a>
+										<%}else if(dto.getGenre_code().equals("07")){ %>
+										<a href="#">Animation</a>
+										<%}else if(dto.getGenre_code().equals("08")){ %>
+										<a href="#">Action/Adventure</a>
+										<%}else if(dto.getGenre_code().equals("09")){ %>
+										<a href="#">Mystery</a>
+										<%}else if(dto.getGenre_code().equals("10")){ %>
+										<a href="#">History</a>
+										<%}else if(dto.getGenre_code().equals("11")){ %>
+										<a href="#">Sports</a>
+										<%}%>
+										
+									</span>
+									<span class="card__rate" id="star_point"><i class="icon ion-ios-star"><%=dto.getStar_avg() %></i></span>
+								</div>
+							</div>
+						</div>
+						<%} %>
+						<!-- end card -->
+		
+					
+		
+						<!-- paginator -->
+						
+						<div class="col-12">
+							<%=Pager.makeTag(request, 12, totalCnt) %>
+						</div>
+						<!-- end paginator -->
+					</div>
+				</div>
+			</div>
+			<!-- end catalog -->
+	</form>
+		
 
 	
 	 <%@include file="../include/footer.jsp" %>
@@ -178,7 +182,8 @@
 <script>
 window.onload=function(){
 	let key = '<%=key%>';
-	var texts=["Action", "Romance", "Comedy", "Thriller/Crime", "Horror","Fantasy","Drama","animation","Action/Adventure","Mystery","전체"];
+	var texts=["Action", "Romance", "Comedy", "Thriller/Crime", "Horror","Fantasy","Drama","animation","Action/Adventure",
+				"Mystery","History","Sports","전체"];
 	
 	document.getElementById("searchItem").value=texts[key];
 }
@@ -186,13 +191,15 @@ window.onload=function(){
 
 function changeSearch(id)
 {
-	var texts=["Action", "Romance", "Comedy", "Thriller/Crime", "Horror","Fantasy","Drama","animation","Action/Adventure","Mystery","전체"];
+	var texts=["Action", "Romance", "Comedy", "Thriller/Crime", "Horror","Fantasy","Drama","animation",
+		"Action/Adventure","Mystery","History","Sports","전체"];
 	document.getElementById("searchItem").value=texts[id]; //화면에 보이기 위해서 
 	document.getElementById("key").value=id;//컨트롤러로 넘기기 위해서
 	
 }
 
 function goSearch(){
+	
 	let frm = document.myform;
 	frm.pg.value=0;
 	frm.action = "<%=request.getContextPath()%>/webtoon/list";
@@ -203,17 +210,17 @@ function goSearch(){
 function goView(id)
 {
 	frm = document.myform;
-	frm.board_seq.value=id;///////////
-	frm.category_code.value="04";///////////
-	frm.method="get";
-	frm.action="${pageContext.request.contextPath}/webtoon/view";
+	frm.board_seq.value = id;///////////
+	frm.category_code.value = "04";///////////
+	frm.method = "get";
+	frm.action = "${pageContext.request.contextPath}/webtoon/view";
 	frm.submit();
 }
 
 function goPage(pg)
 {
 	frm = document.myform;
-	frm.pg.value=pg;///////////
+	frm.pg.value=pg;
 	frm.method="get";
 	frm.action="${pageContext.request.contextPath}/webtoon/list";
 	frm.submit();
@@ -223,3 +230,4 @@ function goPage(pg)
 
 
 </script>
+										

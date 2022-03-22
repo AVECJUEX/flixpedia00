@@ -64,6 +64,12 @@
 					where genre_code = 09
 					</if>
 					<if test='key=="10"'>
+					where genre_code = 10
+					</if>
+					<if test='key=="11"'>
+					where genre_code = 11
+					</if>
+					<if test='key=="12"'>
 					</if>
 				
 				

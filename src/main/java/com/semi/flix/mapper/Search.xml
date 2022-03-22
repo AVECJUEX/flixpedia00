@@ -51,48 +51,11 @@
 		 
 		 
       ) A
-      
-     	<if test='key!=null'>
-	
-					<if test='key=="0"'>
-					where genre_code = 00 and
-					</if>
-					<if test='key=="1"'>
-					where genre_code = 01 and 
-					</if>
-					<if test='key=="2"'>
-					where genre_code = 02 and 
-					</if>
-					<if test='key=="3"'>
-					where genre_code = 03 and 
-					</if>
-					<if test='key=="4"'>
-					where genre_code = 04 and
-					</if>
-					<if test='key=="5"'>
-					where genre_code = 05 and
-					</if>
-					<if test='key=="6"'>
-					where genre_code = 06 and
-					</if>
-					<if test='key=="7"'>
-					where genre_code = 07 and
-					</if>
-					<if test='key=="8"'>
-					where genre_code = 08 and
-					</if>
-					<if test='key=="9"'>
-					where genre_code = 09 and
-					</if>
-					<if test='key=="10"'>
-					where
-					</if>
-				
-				
-				</if> 
-			
+      	where
             A.title like concat('%', '${keyword}','%')
      		or A.producer like concat('%', '${keyword}','%')
+    
+			
       </select>
    
 </mapper>

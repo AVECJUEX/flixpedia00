@@ -52,11 +52,11 @@
 	<error-page>
 	    <error-code>404</error-code>
 	    <location>/error.jsp</location>
-	</error-page> 
+	</error-page>
 	<!-- 500에러 발생시 500에러 페이지 커스텀 -->
 	<error-page>
 	    <error-code>500</error-code>
 	    <location>/error.jsp</location>
-	</error-page> 
+	</error-page>
 
 </web-app>

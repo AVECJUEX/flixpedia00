@@ -19,6 +19,8 @@ String userseq= StringUtil.nullToValue(session.getAttribute("userseq"), "");
 String nickname= StringUtil.nullToValue(session.getAttribute("nickname"), "");
 String userimage= StringUtil.nullToValue(session.getAttribute("userimage"), "");
 String adminid= StringUtil.nullToValue(session.getAttribute("adminuserid"), "");
+String key = StringUtil.nullToValue(request.getParameter("key"),"12");
+
 %>
 
 <meta charset="UTF-8"> 
@@ -140,9 +142,7 @@ String adminid= StringUtil.nullToValue(session.getAttribute("adminuserid"), "");
                <div class="col-12">
                   <div class="header__search-content">
                   
-                     <input type="text" placeholder="제목, 감독, 콘텐츠를 검색해보세요." name="keyword" id="keyword"
-                     aria-label="Search">
-                     <input type="hidden" id="key" name="key" value="10">
+                     <input type="text" placeholder="제목, 감독, 콘텐츠를 검색해보세요." name="keyword" id="keyword" aria-label="Search">
                      <button type="button" name="btnSearch" id="btnSearch">search</button>
                   </div>
                </div>
@@ -159,7 +159,7 @@ String adminid= StringUtil.nullToValue(session.getAttribute("adminuserid"), "");
 
       e.preventDefault();
       var url = "${commonURL}/search/search_list";
-      url = url + "?keyword=" + $('#keyword').val() + "&key=10";
+      url = url + "?keyword=" + $('#keyword').val() + "&headerKey=5";
       location.href = url;
       console.log(url);
    });

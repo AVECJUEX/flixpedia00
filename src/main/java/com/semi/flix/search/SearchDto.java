@@ -12,7 +12,6 @@ public class SearchDto extends BaseDto{
 	private String ratings="";
 	private String star_avg="";
 	
-	
 	public String getStar_avg() {
 		return star_avg;
 	}

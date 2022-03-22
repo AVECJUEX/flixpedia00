@@ -16,7 +16,6 @@
 	
 	<%
 		request.setAttribute("commonURL", request.getContextPath());
-		String key = StringUtil.nullToValue(request.getParameter("key"), "1");
 		String keyword = StringUtil.nullToValue(request.getParameter("keyword"), "");
 		String pg = StringUtil.nullToValue(request.getParameter("pg"), "0");
 		int totalCnt = (Integer)request.getAttribute("totalCnt");
@@ -63,42 +62,9 @@
 				<div class="row">
 					<div class="col-12">
 						<div class="filter__content">
-							<div class="filter__items">
-								<!-- filter item -->
-								<div class="filter__item" id="filter__genre">
-									<span class="filter__item-label">GENRE:</span>
-	
-									<div class="filter__item-btn dropdown-toggle" role="navigation" id="filter-genre" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-										<input type="button" value="선택하세요" id="searchItem">
-										
-									</div>
-	
-									<ul class="filter__item-menu dropdown-menu scrollbar-dropdown" aria-labelledby="filter-genre">
-										
-											<li><a onclick="changeSearch('10')">전체</a></li>
-										<li><a onclick="changeSearch('0')">Action</a></li>
-										<li><a onclick="changeSearch('1')">Romance</a></li>
-										<li><a onclick="changeSearch('2')">Comedy</a></li>
-										<li><a onclick="changeSearch('3')">Thriller/Crime</a></li>
-										<li><a onclick="changeSearch('4')">Horror</a></li>
-										<li><a onclick="changeSearch('5')">Fantasy</a></li>
-										<li><a onclick="changeSearch('6')">Drama</a></li>
-										<li><a onclick="changeSearch('7')">Animation</a></li>
-										<li><a onclick="changeSearch('8')">Action/Adventure</a></li>
-										<li><a onclick="changeSearch('9')">Mystery</a></li>
-										
-									</ul>
-								
-								</div>
-								<!-- end filter item -->
-	
-								<!-- filter item -->
-								
-							</div>
 							
-							<!-- filter btn -->
-							<button class="filter__btn" type="button"  onclick="goSearch()">apply filter</button>
-							<!-- end filter btn -->
+							
+						
 						</div>
 					</div>
 				</div>
@@ -164,13 +130,12 @@
 <script>
 window.onload=function(){
 	let key = '<%=key%>';
-	var texts=["Action", "Romance", "Comedy", "Thriller/Crime", "Horror","Fantasy","Drama","Animation","Action/Adventure","Mystery","전체"];
-
-	document.getElementById("searchItem").value=texts[key];
+	var texts=["영화", "드라마", "예능", "만화", "웹툰","전체"];
+	document.getElementById("searchItem").value=texts[headerKey];
 }
 function changeSearch(id)
 {
-	var texts=["Action", "Romance", "Comedy", "Thriller/Crime", "Horror","Fantasy","Drama","Animation","Action/Adventure","Mystery","전체"];
+	var texts=["영화", "드라마", "예능", "만화", "웹툰","전체"];	
 	document.getElementById("searchItem").value=texts[id]; //화면에 보이기 위해서 
 	document.getElementById("key").value=id;//컨트롤러로 넘기기 위해서
 	
@@ -216,6 +181,7 @@ function goView(code, id)
 function goPage(pg)
 {
 	frm = document.myform;
+	frm.headerKey.value=frm.headerKey2.value;
 	frm.pg.value=pg;///////////
 	frm.method="get";
 	frm.action="${pageContext.request.contextPath}/search/search_list";
