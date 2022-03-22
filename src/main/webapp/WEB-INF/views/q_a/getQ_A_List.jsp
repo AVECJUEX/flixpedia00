@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@page import="com.semi.flix.Q_A.*" %>
+<%@page import="com.semi.flix.common.*" %>
+<%@page import="com.semi.flix.admin.adminQ_A.*" %>
+<%@page import="com.semi.flix.admin.admincomment.*" %>
 <%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
@@ -17,6 +21,11 @@
 
 </head>
 <body class="body">
+	<%
+		String key = StringUtil.nullToValue(request.getParameter("key"), "1");
+		String keyword = StringUtil.nullToValue(request.getParameter("keyword"), "");
+		String pg = StringUtil.nullToValue(request.getParameter("pg"), "0");
+	%>
 	
 	<%@include file="../include/header.jsp" %>
 
@@ -65,10 +74,26 @@
 											<c:forEach items="${q_a_List}" var="q_a">
 												<tr>
 													<td>${ q_a.q_a_seq }</td>
-													<td align="left"><a	href="getQ_A.do?q_a_seq=${ q_a.q_a_seq }">
-													 ${ q_a.q_a_title }</a></td>
-													<td><fmt:formatDate value="${ q_a.q_a_wdate }" pattern="yyyy-MM-dd" /></td>
+												<c:choose>
+													<c:when test="${q_a.user_id eq sessionScope.userid}">
+														
+														<td align="left"><a	href="getQ_A.do?q_a_seq=${ q_a.q_a_seq }">
+														 ${ q_a.q_a_title }</a></td>
+														 
 													<td>${q_a.user_id  }</td>
+													</c:when>
+													<c:otherwise>
+													<td align="left">
+													비밀글</td>
+													</c:otherwise>
+												</c:choose>
+										
+												
+												
+													
+												<td><fmt:formatDate value="${ q_a.q_a_wdate }" pattern="yyyy-MM-dd" /></td>
+													<td>${q_a.user_id  }</td>
+											
 												</tr>
 											</c:forEach>
 										</tbody>
