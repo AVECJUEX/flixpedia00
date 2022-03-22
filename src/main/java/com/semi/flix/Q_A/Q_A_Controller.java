@@ -1,8 +1,9 @@
 package com.semi.flix.Q_A;
 
 import java.io.IOException;
+import java.util.List;
 
-
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -12,12 +13,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import org.springframework.web.bind.annotation.SessionAttributes;
+
+import com.semi.flix.admin.adminQ_A.AdminQ_AService;
+import com.semi.flix.admin.admincomment.AdminCommentDto;
 
 @Controller
 @SessionAttributes("Q_A")
 public class Q_A_Controller {
+	
+	@Resource(name="adminQ_AService")
+	AdminQ_AService service;
+	
 	@Autowired
 	private Q_A_Service q_a_Service;
 
@@ -57,6 +64,12 @@ public class Q_A_Controller {
 	public String getQ_A(Model model, Q_A_DTO dto) {
 		model.addAttribute("q_a", q_a_Service.getQ_A(dto)); // Model 占쏙옙占쏙옙 占쏙옙占쏙옙
 		System.out.println("===> Mybatis占쏙옙 getNotice() 占쏙옙占� 처占쏙옙");
+		
+		AdminCommentDto tempDto = new AdminCommentDto();
+		tempDto.setQ_a_seq(dto.getQ_a_seq());
+		List<AdminCommentDto> list = service.getCommentList(tempDto);
+		System.out.println(list);
+		model.addAttribute("q_aList",list);
 		return "q_a/getQ_A"; // View 占싱몌옙 占쏙옙占쏙옙
 	}
 

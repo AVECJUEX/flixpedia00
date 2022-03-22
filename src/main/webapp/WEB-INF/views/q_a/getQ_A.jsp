@@ -1,6 +1,8 @@
 <%@ page language="java" pageEncoding="utf-8"%>
 <%@page import="com.semi.flix.Q_A.*" %>
 <%@page import="com.semi.flix.common.*" %>
+<%@page import="com.semi.flix.admin.adminQ_A.*" %>
+<%@page import="com.semi.flix.admin.admincomment.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,8 +21,7 @@
 		String keyword = StringUtil.nullToValue(request.getParameter("keyword"), "");
 		String pg = StringUtil.nullToValue(request.getParameter("pg"), "0");
 	%>
-	
-	
+    
 <div class="sign section--bg" data-bg="<%=request.getContextPath() %>/resources/img/section/section.jpg" style="margin-top: 100px;">
 		<div class="container">
 			<div class="row">
@@ -67,6 +68,7 @@
 	
 							Q_A_DTO dto = (Q_A_DTO)request.getAttribute("q_a");
 							if(userid.equals(dto.getUser_id())){%>
+							
 							<button class="sign__btn" type="button" id="btnDuplicate" onclick="goModify()"
 								style="width:100px; height: 30px; margin:2px; display: inline-block; ">글 수정</button>
 							<button class="sign__btn" type="button" 
@@ -83,17 +85,21 @@
 						<div class="price">
 								<div class="price__item price__item--first"><h2>답변</h2> <span></span></div>
 									
-									
+									<% 
+									List<AdminCommentDto> list = (List)request.getAttribute("q_aList");
+									for(AdminCommentDto dto2 : list){
+									%>
 									<br>
 									<div class="price__item"><span>내용</span>
-									<textarea class="sign__qna__write"   readonly="readonly" style=" height: auto; padding: 10px 17px; height: 500px;"></textarea>
+									<textarea class="sign__qna__write"   readonly="readonly" style=" height: auto; padding: 10px 17px; height: 500px;"><%=dto2.getContent()%></textarea>
 									</div>
 									<br>
 									
 									<div class="price__item"><span>작성일</span>
-									<input class="sign__qna__write" type="text" value="" readonly="readonly" />
+									<input class="sign__qna__write" type="text" readonly="readonly" value="<%=dto2.getWdate()%>"/>
 									</div>
 									<br>
+									<%}%>
 									
 									
 							</div>

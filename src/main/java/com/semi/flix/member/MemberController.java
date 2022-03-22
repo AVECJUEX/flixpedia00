@@ -170,6 +170,7 @@ public class MemberController {
 				session.setAttribute("nickname", resultDto.getNick_name());
 				session.setAttribute("userimage", resultDto.getUser_images());
 				System.out.println(visitService.getTotal(null));
+				
 				if(visitService.getTotal(null)==0)
 					visitService.insert(null);
 				//만약 방문자가 wdate에 널이라면 값을 넣어주고

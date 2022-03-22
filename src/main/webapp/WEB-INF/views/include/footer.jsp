@@ -101,16 +101,14 @@
 				
 				<!-- footer list -->
 				<div class="col-12 col-sm-4 col-md-3">
-					<h6 class="footer__title">Contact</h6>
+					<h6 class="footer__title">이혁주</h6>
 					<ul class="footer__list">
-						<li><a href="tel:+18002345678">+1 (800) 234-5678</a></li>
-						<li><a href="mailto:support@moviego.com">support@flixgo.com</a></li>
+						<li><a href="tel:+18002345678">010-2768-8052</a></li>
+						<li><a href="mailto:dlgurwn33@naver.com">dlgurwn33@naver.com</a></li>
 					</ul>
 					<ul class="footer__social">
-						<li class="facebook"><a href="#"><i class="icon ion-logo-facebook"></i></a></li>
-						<li class="instagram"><a href="#"><i class="icon ion-logo-instagram"></i></a></li>
-						<li class="twitter"><a href="#"><i class="icon ion-logo-twitter"></i></a></li>
-						<li class="vk"><a href="#"><i class="icon ion-logo-vk"></i></a></li>
+						<li class="facebook"><a href="https://www.facebook.com/profile.php?id=100006191733924"><i class="icon ion-logo-facebook"></i></a></li>
+						<li class="instagram"><a href="https://www.instagram.com/dear.__.bear/"><i class="icon ion-logo-instagram"></i></a></li>
 					</ul>
 				</div>
 				<!-- end footer list -->
