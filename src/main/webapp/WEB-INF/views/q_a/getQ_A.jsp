@@ -81,7 +81,7 @@
 							</div>
 						<br>
 						<br>
-						<div class="sign__form"  style="width: 100%;">
+						
 						<div class="price">
 								<div class="price__item price__item--first"><h2>답변</h2> <span></span></div>
 									
@@ -91,7 +91,7 @@
 									%>
 									<br>
 									<div class="price__item"><span>내용</span>
-									<textarea class="sign__qna__write"   readonly="readonly" style=" height: auto; padding: 10px 17px; height: 500px;"><%=dto2.getContent()%></textarea>
+									<textarea class="sign__qna__write"   readonly="readonly" style=" height: auto; padding: 10px 17px; height: 150px;"><%=dto2.getContent()%></textarea>
 									</div>
 									<br>
 									
@@ -103,7 +103,7 @@
 									
 									
 							</div>
-						</div>
+						
 						</form>
 						<!-- end authorization form -->
 					</div>
