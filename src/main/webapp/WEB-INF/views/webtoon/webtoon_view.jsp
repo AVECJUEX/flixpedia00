@@ -14,7 +14,6 @@
 </head>
 <body class="body">
 	<%
-	String key = StringUtil.nullToValue(request.getParameter("key"), "10");
 	String pg = StringUtil.nullToValue(request.getParameter("pg"), "0");
 	int commentTotalCnt = (Integer)request.getAttribute("commentTotalCnt");
 	WebtoonDto dto = (WebtoonDto)request.getAttribute("webtoonDto");

@@ -17,7 +17,6 @@
 </head>
 <body class="body">
 	<%
-	String key = StringUtil.nullToValue(request.getParameter("key"), "7");
 	String pg = StringUtil.nullToValue(request.getParameter("pg"), "0");
 	int commentTotalCnt = (Integer)request.getAttribute("commentTotalCnt");
 	AnimationDto dto = (AnimationDto)request.getAttribute("animationDto");
