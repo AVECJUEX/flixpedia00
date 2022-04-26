@@ -33,8 +33,11 @@
 ![image](https://user-images.githubusercontent.com/95205529/165286417-b5c64b94-06e2-4203-90f4-9d7a3a9f852f.png)
 
 - 메일전송
+
 ![image](https://user-images.githubusercontent.com/95205529/165286557-a963aa41-0fbe-4aba-ad8b-3d98009f8492.png)
+
 ![image](https://user-images.githubusercontent.com/95205529/165286593-0da98e24-c4a9-41d1-8645-f9634d1e0fe8.png)
+
 ![image](https://user-images.githubusercontent.com/95205529/165286623-b0d744e3-0241-44c3-9029-bd8606daf5c3.png)
 
 # 작업기록
