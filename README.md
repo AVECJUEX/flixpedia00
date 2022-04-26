@@ -3,6 +3,21 @@
 ### 한국의 영화,드라마,예능,웹툰들 어디에 있지???
 
 # 설명
+## 사용기술 : 
+ - FRONT : HTML5, CSS3, Javascript, jQuery, Bootstrap5
+ - COMMON : Apache Tomcat 9.0, Spring Tool Suite 3.9.18
+ - BACK : MySQL 8.028, JSTL 1.2, AJAX, SpringFramework 3.1.1, JSP 2.1, MyBatis 3.4.6, JAVA 11
+
+## 프로젝트 기간 : 2022-02-21 ~ 2022-03-18
+    - 도로명 주소 api 추가하여 회원가입시 실제 주소 입력 가능
+    - 게시물 페이스북, 트위터로 공유 가능
+    - 이미지 파일 업로드 가능
+    - 페이징 처리
+    - java mail sender 이용하여 메일 전송 기능 구현
+    - 404 페이지 커스텀
+    
+# ERD
+![image](https://user-images.githubusercontent.com/95205529/165285970-74acc45d-e0c5-492c-80bc-7285019449ef.png)
 
 2022-03-03
 
